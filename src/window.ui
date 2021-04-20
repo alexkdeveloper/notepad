@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.38.2 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">list-add-symbolic</property>
+  </object>
+  <object class="GtkImage" id="image2">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">list-remove-symbolic</property>
+  </object>
+  <object class="GtkImage" id="image3">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">document-save-symbolic</property>
+  </object>
+  <object class="GtkImage" id="image4">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">document-save-as-symbolic</property>
+  </object>
+  <object class="GtkListStore" id="list_store">
+    <columns>
+      <!-- column-name notes -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <template class="NotepadWindow" parent="GtkApplicationWindow">
+    <property name="can-focus">False</property>
+    <property name="default-width">600</property>
+    <property name="default-height">300</property>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="shadow-type">in</property>
+            <property name="propagate-natural-width">True</property>
+            <child>
+              <object class="GtkTreeView" id="tree_view">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="model">list_store</property>
+                <property name="headers-visible">False</property>
+                <child internal-child="selection">
+                  <object class="GtkTreeSelection"/>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="column_notes">
+                    <property name="title" translatable="yes">column</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="renderer_notes"/>
+                      <attributes>
+                        <attribute name="text">0</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="hscrollbar-policy">never</property>
+            <property name="vscrollbar-policy">always</property>
+            <property name="shadow-type">in</property>
+            <child>
+              <object class="GtkTextView" id="text_view">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <child type="titlebar">
+      <object class="GtkHeaderBar" id="header_bar">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="title">Notepad</property>
+        <property name="show-close-button">True</property>
+        <child>
+          <object class="GtkButton" id="add_button">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">add note</property>
+            <property name="image">image1</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="delete_button">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">delete note</property>
+            <property name="image">image2</property>
+          </object>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="save_button">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">save note</property>
+            <property name="image">image3</property>
+          </object>
+          <packing>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="save_as_button">
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">save note as</property>
+            <property name="image">image4</property>
+          </object>
+          <packing>
+            <property name="position">3</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>
