@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Notepad
+Comment=Easy to create text notes
+Exec=com.github.alexkdeveloper.notepad
+Icon=com.github.alexkdeveloper.notepad
+Terminal=false
+Type=Application
+Categories=GTK;Utility;
+StartupNotify=true

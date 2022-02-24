@@ -1,0 +1,7 @@
+data/com.github.alexkdeveloper.notepad.desktop.in
+data/com.github.alexkdeveloper.notepad.appdata.xml.in
+data/com.github.alexkdeveloper.notepad.gschema.xml
+src/window.ui
+src/main.vala
+src/window.vala
+
