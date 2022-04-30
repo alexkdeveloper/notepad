@@ -1,0 +1,57 @@
+# ITALIAN TRANSLATION FOR NOTEPAD.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the notepad package.
+# ALBANO BATTISTELLA <ALBANO_BATTISTELLA@HOTMAIL.COM>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: notepad\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-29 18:09+0200\n"
+"PO-Revision-Date: 2022-04-30 11:11+0100\n"
+"Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
+"Language-Team: Italian\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: data/com.github.alexkdeveloper.notepad.desktop.in:3
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:6
+msgid "Notepad"
+msgstr "Notepad"
+
+#: data/com.github.alexkdeveloper.notepad.desktop.in:4
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:7
+msgid "Easy to create text notes"
+msgstr "Facile creare note di testo"
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:9
+msgid "Program for easy creation of text notes."
+msgstr "Programma per creare facilmente note di testo.."
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:14
+msgid "Alex Kryuchkov"
+msgstr "Alex Kryuchkov"
+
+#: src/window.ui:56
+msgid "column"
+msgstr "colonna"
+
+#: src/window.ui:106
+msgid "add note"
+msgstr "aggiungi nota"
+
+#: src/window.ui:115
+msgid "delete note"
+msgstr "cancella nota"
+
+#: src/window.ui:127
+msgid "save note"
+msgstr "salva nota"
+
+#: src/window.ui:139
+msgid "save note as"
+msgstr "salva nota come"
