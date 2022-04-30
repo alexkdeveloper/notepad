@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the notepad package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: notepad\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-29 18:09+0200\n"
+"PO-Revision-Date: 2022-04-29 18:11+0200\n"
+"Last-Translator: vikdevelop\n"
+"Language-Team: Czech\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: data/com.github.alexkdeveloper.notepad.desktop.in:3
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:6
+msgid "Notepad"
+msgstr "Poznámkový blok"
+
+#: data/com.github.alexkdeveloper.notepad.desktop.in:4
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:7
+msgid "Easy to create text notes"
+msgstr "Snadné vytváření textových poznámek"
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:9
+msgid "Program for easy creation of text notes."
+msgstr "Program pro jednoduché vytváření textových poznámek"
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:14
+msgid "Alex Kryuchkov"
+msgstr "Alex Kryuchkov"
+
+#: src/window.ui:56
+msgid "column"
+msgstr "Sloupec"
+
+#: src/window.ui:106
+msgid "add note"
+msgstr "Přidat poznámku"
+
+#: src/window.ui:115
+msgid "delete note"
+msgstr "Odstranit poznámku"
+
+#: src/window.ui:127
+msgid "save note"
+msgstr "Uložit poznámku"
+
+#: src/window.ui:139
+msgid "save note as"
+msgstr "Uložit poznámku jako"
