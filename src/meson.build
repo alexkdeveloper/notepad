@@ -15,7 +15,10 @@ notepad_sources += gnome.compile_resources('notepad-resources',
   c_name: 'notepad'
 )
 
-executable('com.github.alexkdeveloper.notepad', notepad_sources,
-  vala_args: '--target-glib=2.50',  dependencies: notepad_deps,
+executable('com.github.alexkdeveloper.notepad', notepad_sources, 
+include_directories: config_h_dir, 
+vala_args: ['--target-glib=2.50', meson.source_root() + '/src/config.vapi'], 
+c_args: ['-include', 'config.h'], 
+  dependencies: notepad_deps,
   install: true,
 )
