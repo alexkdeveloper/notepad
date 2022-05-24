@@ -83,18 +83,18 @@ namespace Notepad {
            Gtk.TreeModel model;
            Gtk.TreeIter iter;
            if (!selection.get_selected(out model, out iter)) {
-               alert("Choose a note");
+               alert(_("Choose a note"));
                return;
            }
            GLib.File file = GLib.File.new_for_path(directory_path+"/"+item);
-         var dialog_delete_file = new Gtk.MessageDialog(this, Gtk.DialogFlags.MODAL,Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, "Delete note "+file.get_basename()+" ?");
-         dialog_delete_file.set_title("Question");
+         var dialog_delete_file = new Gtk.MessageDialog(this, Gtk.DialogFlags.MODAL,Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, _("Delete note ")+file.get_basename()+"?");
+         dialog_delete_file.set_title(_("Question"));
          Gtk.ResponseType result = (Gtk.ResponseType)dialog_delete_file.run ();
          dialog_delete_file.destroy();
          if(result==Gtk.ResponseType.OK){
          FileUtils.remove (directory_path+"/"+item);
          if(file.query_exists()){
-            alert("Delete failed");
+            alert(_("Delete failed"));
          }else{
              show_notes();
              text_view.buffer.text = "";
@@ -107,19 +107,19 @@ namespace Notepad {
            Gtk.TreeModel model;
            Gtk.TreeIter iter;
            if (!selection.get_selected(out model, out iter)) {
-               alert("Choose a note");
+               alert(_("Choose a note"));
                if(!is_empty(text_view.buffer.text)){
                    note = text_view.buffer.text;
                }
                return;
            }
          if(is_empty(text_view.buffer.text)){
-             alert("Nothing to save");
+             alert(_("Nothing to save"));
              return;
          }
          GLib.File file = GLib.File.new_for_path(directory_path+"/"+item);
-        var dialog_save_file = new Gtk.MessageDialog(this, Gtk.DialogFlags.MODAL,Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, "Save note "+file.get_basename()+" ?");
-         dialog_save_file.set_title("Question");
+        var dialog_save_file = new Gtk.MessageDialog(this, Gtk.DialogFlags.MODAL,Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, _("Save note ")+file.get_basename()+"?");
+         dialog_save_file.set_title(_("Question"));
          Gtk.ResponseType result = (Gtk.ResponseType)dialog_save_file.run ();
          if(result==Gtk.ResponseType.OK){
          try {
@@ -138,27 +138,27 @@ namespace Notepad {
            Gtk.TreeModel model;
            Gtk.TreeIter iter;
            if (!selection.get_selected(out model, out iter)) {
-               alert("Choose a note");
+               alert(_("Choose a note"));
                if(!is_empty(text_view.buffer.text)){
                    note = text_view.buffer.text;
                }
                return;
            }
         if(is_empty(text_view.buffer.text)){
-             alert("Nothing to save");
+             alert(_("Nothing to save"));
              return;
          }
-        var dialog_save_note = new Gtk.Dialog.with_buttons ("Save note", this, Gtk.DialogFlags.MODAL);
+        var dialog_save_note = new Gtk.Dialog.with_buttons (_("Save note"), this, Gtk.DialogFlags.MODAL);
 		var content_area = dialog_save_note.get_content_area ();
         entry_name = new Gtk.Entry();
-        var label_name = new Gtk.Label.with_mnemonic ("_Name:");
+        var label_name = new Gtk.Label.with_mnemonic (_("_Name:"));
         var hbox = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 20);
         hbox.set_border_width(15);
         hbox.pack_start (label_name, false, true, 0);
         hbox.pack_start (entry_name, true, true, 0);
 		content_area.add (hbox);
 		dialog_save_note.add_button ("OK", Gtk.ResponseType.OK);
-		dialog_save_note.add_button ("CLOSE", Gtk.ResponseType.CLOSE);
+		dialog_save_note.add_button (_("CLOSE"), Gtk.ResponseType.CLOSE);
 		dialog_save_note.response.connect (on_save_response);
 		dialog_save_note.show_all ();
       }
@@ -167,7 +167,7 @@ namespace Notepad {
         switch (response_id) {
 		case Gtk.ResponseType.OK:
 		if(is_empty(entry_name.get_text())){
-		    alert("Enter the name");
+		    alert(_("Enter the name"));
             entry_name.grab_focus();
             return;
 		}
@@ -176,7 +176,7 @@ namespace Notepad {
 		if (select_file.get_basename() != edit_file.get_basename() && !edit_file.query_exists()){
                 FileUtils.rename(select_file.get_path(), edit_file.get_path());
                 if(!edit_file.query_exists()){
-                    alert("Rename failed");
+                    alert(_("Rename failed"));
                     return;
                 }
                 try {
@@ -186,7 +186,7 @@ namespace Notepad {
             }
             }else{
                 if (select_file.get_basename() != edit_file.get_basename()) {
-                    alert("A note with the same name already exists");
+                    alert(_("A note with the same name already exists"));
                     entry_name.grab_focus();
                     return;
                 }
@@ -268,7 +268,7 @@ namespace Notepad {
 
     private void alert (string str){
           var dialog_alert = new Gtk.MessageDialog(this, Gtk.DialogFlags.MODAL, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, str);
-          dialog_alert.set_title("Message");
+          dialog_alert.set_title(_("Message"));
           dialog_alert.run();
           dialog_alert.destroy();
        }

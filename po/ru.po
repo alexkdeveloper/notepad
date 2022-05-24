@@ -1,0 +1,84 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2022-05-24 18:12+0800\n"
+"PO-Revision-Date: 2022-05-24 18:28+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ../src\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: window.ui:106
+msgid "add note"
+msgstr "добавить заметку"
+
+#: window.ui:115
+msgid "delete note"
+msgstr "удалить заметку"
+
+#: window.ui:127
+msgid "save note"
+msgstr "сохранить заметку"
+
+#: window.ui:139
+msgid "save note as"
+msgstr "сохранить заметку как"
+
+#: window.vala:86 window.vala:110 window.vala:141
+msgid "Choose a note"
+msgstr "Выберите заметку"
+
+#: window.vala:90
+msgid "Delete note "
+msgstr "Удалить заметку "
+
+#: window.vala:91 window.vala:122
+msgid "Question"
+msgstr "Вопрос"
+
+#: window.vala:97
+msgid "Delete failed"
+msgstr "Не удалось удалить"
+
+#: window.vala:117 window.vala:148
+msgid "Nothing to save"
+msgstr "Нечего сохранять"
+
+#: window.vala:121
+msgid "Save note "
+msgstr "Сохранить заметку "
+
+#: window.vala:151
+msgid "Save note"
+msgstr "Сохранить заметку"
+
+#: window.vala:154
+msgid "_Name:"
+msgstr "_Имя:"
+
+#: window.vala:161
+msgid "CLOSE"
+msgstr "ЗАКРЫТЬ"
+
+#: window.vala:170
+msgid "Enter the name"
+msgstr "Введите имя"
+
+#: window.vala:179
+msgid "Rename failed"
+msgstr "Не удалось переименовать"
+
+#: window.vala:189
+msgid "A note with the same name already exists"
+msgstr "Заметка с таким именем уже существует"
+
+#: window.vala:271
+msgid "Message"
+msgstr "Сообщение"
