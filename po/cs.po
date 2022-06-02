@@ -1,57 +1,84 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the notepad package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: notepad\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 18:09+0200\n"
-"PO-Revision-Date: 2022-04-29 18:11+0200\n"
-"Last-Translator: vikdevelop\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2022-06-01 18:12+0800\n"
+"PO-Revision-Date: 2022-06-01 18:28+0800\n"
+"Last-Translator: \n"
 "Language-Team: Czech\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ../src\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: data/com.github.alexkdeveloper.notepad.desktop.in:3
-#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:6
-msgid "Notepad"
-msgstr "Poznámkový blok"
-
-#: data/com.github.alexkdeveloper.notepad.desktop.in:4
-#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:7
-msgid "Easy to create text notes"
-msgstr "Snadné vytváření textových poznámek"
-
-#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:9
-msgid "Program for easy creation of text notes."
-msgstr "Program pro jednoduché vytváření textových poznámek"
-
-#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:14
-msgid "Alex Kryuchkov"
-msgstr "Alex Kryuchkov"
-
-#: src/window.ui:56
-msgid "column"
-msgstr "Sloupec"
-
-#: src/window.ui:106
+#: window.ui:106
 msgid "add note"
-msgstr "Přidat poznámku"
+msgstr "přidat poznámku"
 
-#: src/window.ui:115
+#: window.ui:115
 msgid "delete note"
-msgstr "Odstranit poznámku"
+msgstr "odstranit poznámku"
 
-#: src/window.ui:127
+#: window.ui:127
 msgid "save note"
+msgstr "uložit poznámku"
+
+#: window.ui:139
+msgid "save note as"
+msgstr "uložit poznámku jako"
+
+#: window.vala:86 window.vala:110 window.vala:141
+msgid "Choose a note"
+msgstr "Vyberte poznámku"
+
+#: window.vala:90
+msgid "Delete note "
+msgstr "Odstranit poznámku "
+
+#: window.vala:91 window.vala:122
+msgid "Question"
+msgstr "Otázka"
+
+#: window.vala:97
+msgid "Delete failed"
+msgstr "Odstranění se nezdačilo"
+
+#: window.vala:117 window.vala:148
+msgid "Nothing to save"
+msgstr "Nic není k uložení"
+
+#: window.vala:121
+msgid "Save note "
+msgstr "Uložit poznámku "
+
+#: window.vala:151
+msgid "Save note"
 msgstr "Uložit poznámku"
 
-#: src/window.ui:139
-msgid "save note as"
-msgstr "Uložit poznámku jako"
+#: window.vala:154
+msgid "_Name:"
+msgstr "_Název:"
+
+#: window.vala:161
+msgid "CLOSE"
+msgstr "ZAVŘÍT"
+
+#: window.vala:170
+msgid "Enter the name"
+msgstr "Zadejte název"
+
+#: window.vala:179
+msgid "Rename failed"
+msgstr "Přejmenování se nezdačilo"
+
+#: window.vala:189
+msgid "A note with the same name already exists"
+msgstr "Poznámka se stejným názvem již existuje"
+
+#: window.vala:271
+msgid "Message"
+msgstr "Zpráva"
