@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: notepad\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-29 18:09+0200\n"
-"PO-Revision-Date: 2022-04-30 11:11+0100\n"
+"PO-Revision-Date: 2022-06-02 13:11+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -30,7 +30,7 @@ msgstr "Facile creare note di testo"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:9
 msgid "Program for easy creation of text notes."
-msgstr "Programma per creare facilmente note di testo.."
+msgstr "Programma per creare facilmente note di testo."
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:14
 msgid "Alex Kryuchkov"
