@@ -5,7 +5,7 @@ notepad_sources = [
 
 notepad_deps = [
   dependency('gio-2.0', version: '>= 2.50'),
-  dependency('gtk4', version: '>= 3.22'),
+  dependency('gtk4'),
   dependency('libadwaita-1')
 ]
 
