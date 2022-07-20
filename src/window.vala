@@ -17,44 +17,35 @@
  */
 
 namespace Notepad {
-	[GtkTemplate (ui = "/com/github/alexkdeveloper/notepad/window.ui")]
-	public class Window : Gtk.ApplicationWindow {
-		[GtkChild]
-		unowned Gtk.TreeView tree_view;
-		[GtkChild]
-		unowned Gtk.ListStore list_store;
-		[GtkChild]
-		unowned Gtk.TextView text_view;
-		[GtkChild]
-		unowned Gtk.Button add_button;
-		[GtkChild]
-		unowned Gtk.Button delete_button;
-		[GtkChild]
-		unowned Gtk.Button save_button;
-		[GtkChild]
-		unowned Gtk.Button save_as_button;
+	public class Window : Adw.ApplicationWindow {
+		private Gtk.TreeView tree_view;
+		private Gtk.ListStore list_store;
+		private Gtk.TextView text_view;
+		private Gtk.Button add_button;
+		private Gtk.Button delete_button;
+		private Gtk.Button save_button;
+		private Gtk.Button save_as_button;
         
         private Gtk.Entry entry_name;
 
         private GLib.List<string> list;
+        private Adw.ToastOverlay overlay;
 		private string directory_path;
-        private string item;
-        private string note;
+        private string item = "";
+        private string note = "";
 
-		public Window (Gtk.Application app) {
-			Object (application: app);
+		public Window (Adw.Application app) {
+			Object (application: app, title: "Notepad",
+            default_height: 300,
+            default_width: 550);
 			add_button.clicked.connect(on_add_clicked);
             delete_button.clicked.connect (on_delete_clicked);
             save_button.clicked.connect (on_save_clicked);
             save_as_button.clicked.connect(on_save_as_clicked);
             tree_view.cursor_changed.connect(on_select_item);
             var css_provider = new Gtk.CssProvider();
-            try {
-                     css_provider.load_from_data(".text_size {font-size: 15px}");
-                     Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-                 } catch (Error e) {
-                     error ("Cannot load CSS stylesheet: %s", e.message);
-             }
+            css_provider.load_from_data((uint8[])".text_size {font-size: 15px}");
+            Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             text_view.get_style_context().add_class("text_size");
 			directory_path = Environment.get_user_data_dir()+"/notes_for_notepad_app";
    GLib.File file = GLib.File.new_for_path(directory_path);
@@ -67,7 +58,64 @@ namespace Notepad {
 		}
 		show_notes();
 	}
+    construct{
+        list_store = new Gtk.ListStore(Columns.N_COLUMNS, typeof(string));
+           tree_view = new Gtk.TreeView.with_model(list_store);
+           var text = new Gtk.CellRendererText ();
+           var column = new Gtk.TreeViewColumn ();
+           column.pack_start (text, true);
+           column.add_attribute (text, "markup", Columns.TEXT);
+           tree_view.append_column (column);
+           tree_view.set_headers_visible (false);
+           tree_view.cursor_changed.connect(on_select_item);
+        var scroll = new Gtk.ScrolledWindow ();
+        scroll.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+        scroll.set_vexpand(true);
+        scroll.set_propagate_natural_width(true);
+        scroll.set_child (this.tree_view);
 
+        text_view = new Gtk.TextView();
+        text_view.wrap_mode = Gtk.WrapMode.WORD;
+        var scroll_for_text = new Gtk.ScrolledWindow ();
+        scroll_for_text.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+        scroll_for_text.set_vexpand(true);
+        scroll_for_text.set_hexpand(true);
+        scroll_for_text.set_child (this.text_view);
+
+        add_button = new Gtk.Button ();
+            add_button.set_icon_name ("list-add-symbolic");
+            add_button.vexpand = false;
+            add_button.tooltip_text = _("add note");
+        delete_button = new Gtk.Button ();
+            delete_button.set_icon_name ("list-remove-symbolic");
+            delete_button.vexpand = false;
+            delete_button.tooltip_text = _("delete note");
+        save_button = new Gtk.Button ();
+            save_button.set_icon_name ("document-save-symbolic");
+            save_button.vexpand = false;
+            save_button.tooltip_text = _("save note");
+        save_as_button = new Gtk.Button ();
+            save_as_button.set_icon_name ("document-save-as-symbolic");
+            save_as_button.vexpand = false;
+            save_as_button.tooltip_text = _("save note as");
+
+        var headerbar = new Adw.HeaderBar();
+        headerbar.pack_start(add_button);
+        headerbar.pack_start(delete_button);
+        headerbar.pack_start(save_button);
+        headerbar.pack_start(save_as_button);
+
+        var box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 5);
+        box.append(scroll);
+        box.append(scroll_for_text);
+        overlay = new Adw.ToastOverlay();
+        overlay.vexpand = true;
+          overlay.set_child(box);
+          var main_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
+          main_box.append(headerbar);
+          main_box.append(overlay);
+          set_content(main_box);
+    }
       private void on_add_clicked(){
         GLib.File file = GLib.File.new_for_path(directory_path+"/"+date_time());
         try {
@@ -83,23 +131,25 @@ namespace Notepad {
            Gtk.TreeModel model;
            Gtk.TreeIter iter;
            if (!selection.get_selected(out model, out iter)) {
-               alert(_("Choose a note"));
+               set_toast(_("Choose a note"));
                return;
            }
            GLib.File file = GLib.File.new_for_path(directory_path+"/"+item);
-         var dialog_delete_file = new Gtk.MessageDialog(this, Gtk.DialogFlags.MODAL,Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, _("Delete note ")+file.get_basename()+"?");
-         dialog_delete_file.set_title(_("Question"));
-         Gtk.ResponseType result = (Gtk.ResponseType)dialog_delete_file.run ();
-         dialog_delete_file.destroy();
-         if(result==Gtk.ResponseType.OK){
-         FileUtils.remove (directory_path+"/"+item);
-         if(file.query_exists()){
-            alert(_("Delete failed"));
-         }else{
-             show_notes();
-             text_view.buffer.text = "";
-         }
-      }
+           var delete_note_dialog = new Gtk.MessageDialog(this, Gtk.DialogFlags.MODAL,Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, _("Delete note ")+file.get_basename()+"?");
+           delete_note_dialog.set_title(_("Question"));
+           delete_note_dialog.show ();
+           delete_note_dialog.response.connect((response) => {
+                  if (response == Gtk.ResponseType.OK) {
+                       FileUtils.remove (directory_path+"/"+item);
+                      if(file.query_exists()){
+                         set_toast(_("Delete failed"));
+                      }else{
+                         show_notes();
+                         text_view.buffer.text = "";
+                      }
+                  }
+                  delete_note_dialog.close();
+              });
       }
       private void on_save_clicked(){
          var selection = tree_view.get_selection();
@@ -107,29 +157,31 @@ namespace Notepad {
            Gtk.TreeModel model;
            Gtk.TreeIter iter;
            if (!selection.get_selected(out model, out iter)) {
-               alert(_("Choose a note"));
+               set_toast(_("Choose a note"));
                if(!is_empty(text_view.buffer.text)){
                    note = text_view.buffer.text;
                }
                return;
            }
          if(is_empty(text_view.buffer.text)){
-             alert(_("Nothing to save"));
+             set_toast(_("Nothing to save"));
              return;
          }
          GLib.File file = GLib.File.new_for_path(directory_path+"/"+item);
-        var dialog_save_file = new Gtk.MessageDialog(this, Gtk.DialogFlags.MODAL,Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, _("Save note ")+file.get_basename()+"?");
-         dialog_save_file.set_title(_("Question"));
-         Gtk.ResponseType result = (Gtk.ResponseType)dialog_save_file.run ();
-         if(result==Gtk.ResponseType.OK){
-         try {
-            FileUtils.set_contents (file.get_path(), text_view.buffer.text);
-        } catch (Error e) {
-            stderr.printf ("Error: %s\n", e.message);
-        }
-          show_notes();
-      }
-      dialog_save_file.destroy();
+         var save_note_dialog = new Gtk.MessageDialog(this, Gtk.DialogFlags.MODAL,Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, _("Save note ")+file.get_basename()+"?");
+         save_note_dialog.set_title(_("Question"));
+         save_note_dialog.show ();
+         save_note_dialog.response.connect((response) => {
+                if (response == Gtk.ResponseType.OK) {
+                    try {
+                        FileUtils.set_contents (file.get_path(), text_view.buffer.text);
+                    } catch (Error e) {
+                        stderr.printf ("Error: %s\n", e.message);
+                    }
+                      show_notes();
+                }
+                save_note_dialog.close();
+            });
       }
 
       private void on_save_as_clicked(){
@@ -138,36 +190,40 @@ namespace Notepad {
            Gtk.TreeModel model;
            Gtk.TreeIter iter;
            if (!selection.get_selected(out model, out iter)) {
-               alert(_("Choose a note"));
+               set_toast(_("Choose a note"));
                if(!is_empty(text_view.buffer.text)){
                    note = text_view.buffer.text;
                }
                return;
            }
         if(is_empty(text_view.buffer.text)){
-             alert(_("Nothing to save"));
+             set_toast(_("Nothing to save"));
              return;
          }
         var dialog_save_note = new Gtk.Dialog.with_buttons (_("Save note"), this, Gtk.DialogFlags.MODAL);
 		var content_area = dialog_save_note.get_content_area ();
         entry_name = new Gtk.Entry();
         var label_name = new Gtk.Label.with_mnemonic (_("_Name:"));
-        var hbox = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 20);
-        hbox.set_border_width(15);
-        hbox.pack_start (label_name, false, true, 0);
-        hbox.pack_start (entry_name, true, true, 0);
-		content_area.add (hbox);
+        label_name.set_xalign (0);
+        var hbox = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
+        hbox.margin_start = 10;
+        hbox.margin_end = 10;
+        hbox.margin_top = 10;
+        hbox.margin_bottom = 10;
+        hbox.append (label_name);
+        hbox.append (entry_name);
+		content_area.append (hbox);
 		dialog_save_note.add_button ("OK", Gtk.ResponseType.OK);
 		dialog_save_note.add_button (_("CLOSE"), Gtk.ResponseType.CLOSE);
 		dialog_save_note.response.connect (on_save_response);
-		dialog_save_note.show_all ();
+		dialog_save_note.show ();
       }
 
       private void on_save_response (Gtk.Dialog dialog, int response_id) {
         switch (response_id) {
 		case Gtk.ResponseType.OK:
 		if(is_empty(entry_name.get_text())){
-		    alert(_("Enter the name"));
+		    set_toast(_("Enter the name"));
             entry_name.grab_focus();
             return;
 		}
@@ -176,7 +232,7 @@ namespace Notepad {
 		if (select_file.get_basename() != edit_file.get_basename() && !edit_file.query_exists()){
                 FileUtils.rename(select_file.get_path(), edit_file.get_path());
                 if(!edit_file.query_exists()){
-                    alert(_("Rename failed"));
+                    set_toast(_("Rename failed"));
                     return;
                 }
                 try {
@@ -227,10 +283,14 @@ namespace Notepad {
             } catch (Error e) {
                stderr.printf ("Error: %s\n", e.message);
             }
-            text_view.buffer.text = text;
             if (is_empty(text)&&!is_empty(note)){
                 text_view.buffer.text = note;
-                note = "";
+                Timeout.add_seconds(1,()=>{
+                    note = "";
+                    return false;
+                });
+            }else{
+                text_view.buffer.text = text;
             }
        }
 
@@ -265,12 +325,16 @@ namespace Notepad {
          var now = new DateTime.now_local ();
          return now.format("%d")+"."+now.format("%m")+"."+now.format("%Y")+"  "+now.format("%H")+":"+now.format("%M")+":"+now.format("%S");
     }
-
+    private void set_toast (string str){
+        var toast = new Adw.Toast(str);
+        toast.set_timeout(3);
+        overlay.add_toast(toast);
+    }
     private void alert (string str){
-          var dialog_alert = new Gtk.MessageDialog(this, Gtk.DialogFlags.MODAL, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, str);
-          dialog_alert.set_title(_("Message"));
-          dialog_alert.run();
-          dialog_alert.destroy();
-       }
+        var dialog_alert = new Gtk.MessageDialog(this, Gtk.DialogFlags.MODAL, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, str);
+        dialog_alert.set_title(_("Message"));
+        dialog_alert.response.connect((_) => { dialog_alert.close(); });
+        dialog_alert.show();
+     }
     }
 }

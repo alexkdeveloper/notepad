@@ -20,7 +20,7 @@ int main (string[] args) {
 	Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.LOCALEDIR);
     Intl.bind_textdomain_codeset (Config.GETTEXT_PACKAGE, "UTF-8");
     Intl.textdomain (Config.GETTEXT_PACKAGE);
-	var app = new Gtk.Application ("com.github.alexkdeveloper.notepad", ApplicationFlags.FLAGS_NONE);
+	var app = new Adw.Application ("com.github.alexkdeveloper.notepad", ApplicationFlags.FLAGS_NONE);
 	app.activate.connect (() => {
 		var win = app.active_window;
 		if (win == null) {
