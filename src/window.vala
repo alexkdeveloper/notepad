@@ -109,12 +109,11 @@ namespace Notepad {
         box.append(scroll);
         box.append(scroll_for_text);
         overlay = new Adw.ToastOverlay();
-        overlay.vexpand = true;
-          overlay.set_child(box);
-          var main_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
-          main_box.append(headerbar);
-          main_box.append(overlay);
-          set_content(main_box);
+        overlay.set_child(box);
+        var main_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
+        main_box.append(headerbar);
+        main_box.append(overlay);
+        set_content(main_box);
     }
       private void on_add_clicked(){
         GLib.File file = GLib.File.new_for_path(directory_path+"/"+date_time());
