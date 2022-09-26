@@ -134,21 +134,25 @@ namespace Notepad {
                return;
            }
            GLib.File file = GLib.File.new_for_path(directory_path+"/"+item);
-           var delete_note_dialog = new Gtk.MessageDialog(this, Gtk.DialogFlags.MODAL,Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, _("Delete note ")+file.get_basename()+"?");
-           delete_note_dialog.set_title(_("Question"));
-           delete_note_dialog.show ();
-           delete_note_dialog.response.connect((response) => {
-                  if (response == Gtk.ResponseType.OK) {
-                       FileUtils.remove (directory_path+"/"+item);
+      var delete_note_dialog = new Adw.MessageDialog(this, _("Delete note ")+file.get_basename()+"?", "");
+            delete_note_dialog.add_response("cancel", _("_Cancel"));
+            delete_note_dialog.add_response("ok", _("_OK"));
+            delete_note_dialog.set_default_response("ok");
+            delete_note_dialog.set_close_response("cancel");
+            delete_note_dialog.set_response_appearance("ok", SUGGESTED);
+            delete_note_dialog.show();
+            delete_note_dialog.response.connect((response) => {
+                if (response == "ok") {
+                     FileUtils.remove (directory_path+"/"+item);
                       if(file.query_exists()){
                          set_toast(_("Delete failed"));
                       }else{
                          show_notes();
                          text_view.buffer.text = "";
                       }
-                  }
-                  delete_note_dialog.close();
-              });
+                }
+                delete_note_dialog.close();
+            });
       }
       private void on_save_clicked(){
          var selection = tree_view.get_selection();
@@ -167,12 +171,16 @@ namespace Notepad {
              return;
          }
          GLib.File file = GLib.File.new_for_path(directory_path+"/"+item);
-         var save_note_dialog = new Gtk.MessageDialog(this, Gtk.DialogFlags.MODAL,Gtk.MessageType.QUESTION, Gtk.ButtonsType.OK_CANCEL, _("Save note ")+file.get_basename()+"?");
-         save_note_dialog.set_title(_("Question"));
-         save_note_dialog.show ();
-         save_note_dialog.response.connect((response) => {
-                if (response == Gtk.ResponseType.OK) {
-                    try {
+         var save_note_dialog = new Adw.MessageDialog(this, _("Save note ")+file.get_basename()+"?", "");
+            save_note_dialog.add_response("cancel", _("_Cancel"));
+            save_note_dialog.add_response("ok", _("_OK"));
+            save_note_dialog.set_default_response("ok");
+            save_note_dialog.set_close_response("cancel");
+            save_note_dialog.set_response_appearance("ok", SUGGESTED);
+            save_note_dialog.show();
+            save_note_dialog.response.connect((response) => {
+                if (response == "ok") {
+                     try {
                         FileUtils.set_contents (file.get_path(), text_view.buffer.text);
                     } catch (Error e) {
                         stderr.printf ("Error: %s\n", e.message);
@@ -241,7 +249,7 @@ namespace Notepad {
             }
             }else{
                 if (select_file.get_basename() != edit_file.get_basename()) {
-                    alert(_("A note with the same name already exists"));
+                    alert(_("A note with the same name already exists"),"");
                     entry_name.grab_focus();
                     return;
                 }
@@ -329,11 +337,15 @@ namespace Notepad {
         toast.set_timeout(3);
         overlay.add_toast(toast);
     }
-    private void alert (string str){
-        var dialog_alert = new Gtk.MessageDialog(this, Gtk.DialogFlags.MODAL, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, str);
-        dialog_alert.set_title(_("Message"));
-        dialog_alert.response.connect((_) => { dialog_alert.close(); });
-        dialog_alert.show();
-     }
+    private void alert (string heading, string body){
+            var dialog_alert = new Adw.MessageDialog(this, heading, body);
+            if (body != "") {
+                dialog_alert.set_body(body);
+            }
+            dialog_alert.add_response("ok", _("_OK"));
+            dialog_alert.set_response_appearance("ok", SUGGESTED);
+            dialog_alert.response.connect((_) => { dialog_alert.close(); });
+            dialog_alert.show();
+        }
     }
 }
