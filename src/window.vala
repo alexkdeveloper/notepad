@@ -85,19 +85,19 @@ namespace Notepad {
         add_button = new Gtk.Button ();
             add_button.set_icon_name ("list-add-symbolic");
             add_button.vexpand = false;
-            add_button.tooltip_text = _("add note");
+            add_button.tooltip_text = _("Add Note");
         delete_button = new Gtk.Button ();
             delete_button.set_icon_name ("list-remove-symbolic");
             delete_button.vexpand = false;
-            delete_button.tooltip_text = _("delete note");
+            delete_button.tooltip_text = _("Delete Note");
         save_button = new Gtk.Button ();
             save_button.set_icon_name ("document-save-symbolic");
             save_button.vexpand = false;
-            save_button.tooltip_text = _("save note");
+            save_button.tooltip_text = _("Save Note");
         save_as_button = new Gtk.Button ();
             save_as_button.set_icon_name ("document-save-as-symbolic");
             save_as_button.vexpand = false;
-            save_as_button.tooltip_text = _("save note as");
+            save_as_button.tooltip_text = _("Save Note as…");
 
         var headerbar = new Adw.HeaderBar();
         headerbar.pack_start(add_button);

@@ -41,17 +41,17 @@ msgid "column"
 msgstr "colonna"
 
 #: src/window.ui:106
-msgid "add note"
-msgstr "aggiungi nota"
+msgid "Add Note"
+msgstr "Aggiungi Nota"
 
 #: src/window.ui:115
-msgid "delete note"
-msgstr "cancella nota"
+msgid "Delete Note"
+msgstr "Cancella Nota"
 
 #: src/window.ui:127
-msgid "save note"
-msgstr "salva nota"
+msgid "Save Note"
+msgstr "Salva Nota"
 
 #: src/window.ui:139
-msgid "save note as"
-msgstr "salva nota come"
+msgid "Save Note as…"
+msgstr "Salva Nota come…"
