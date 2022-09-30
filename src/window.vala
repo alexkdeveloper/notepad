@@ -134,7 +134,7 @@ namespace Notepad {
                return;
            }
            GLib.File file = GLib.File.new_for_path(directory_path+"/"+item);
-      var delete_note_dialog = new Adw.MessageDialog(this, _("Delete note ")+file.get_basename()+"?", "");
+      var delete_note_dialog = new Adw.MessageDialog(this, _("Delete Note?"), _("Delete note “%s”?").printf(file.get_basename()));
             delete_note_dialog.add_response("cancel", _("_Cancel"));
             delete_note_dialog.add_response("ok", _("_OK"));
             delete_note_dialog.set_default_response("ok");
@@ -171,7 +171,7 @@ namespace Notepad {
              return;
          }
          GLib.File file = GLib.File.new_for_path(directory_path+"/"+item);
-         var save_note_dialog = new Adw.MessageDialog(this, _("Save note ")+file.get_basename()+"?", "");
+         var save_note_dialog = new Adw.MessageDialog(this, _("Save Note?"), _("Save note “%s”?").printf(file.get_basename()));
             save_note_dialog.add_response("cancel", _("_Cancel"));
             save_note_dialog.add_response("ok", _("_OK"));
             save_note_dialog.set_default_response("ok");
