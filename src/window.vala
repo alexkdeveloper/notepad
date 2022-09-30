@@ -220,8 +220,8 @@ namespace Notepad {
         vbox.append (label_name);
         vbox.append (entry_name);
 		content_area.append (vbox);
-		dialog_save_note.add_button ("OK", Gtk.ResponseType.OK);
-		dialog_save_note.add_button (_("CLOSE"), Gtk.ResponseType.CLOSE);
+		dialog_save_note.add_button (_("_Close"), Gtk.ResponseType.CLOSE);
+		dialog_save_note.add_button (_("_OK"), Gtk.ResponseType.OK);
 		dialog_save_note.response.connect (on_save_response);
 		dialog_save_note.show ();
       }
