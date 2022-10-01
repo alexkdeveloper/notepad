@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-24 18:12+0800\n"
-"PO-Revision-Date: 2022-05-24 18:28+0800\n"
+"POT-Creation-Date: 2022-10-01 13:41+0800\n"
+"PO-Revision-Date: 2022-10-01 13:53+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -11,74 +11,102 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Poedit-Basepath: ../src\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: window.ui:106
-msgid "add note"
-msgstr "добавить заметку"
+#: window.vala:88
+msgid "Add Note"
+msgstr "Добавить Заметку"
 
-#: window.ui:115
-msgid "delete note"
-msgstr "удалить заметку"
+#: window.vala:92
+msgid "Delete Note"
+msgstr "Удалить Заметку "
 
-#: window.ui:127
-msgid "save note"
-msgstr "сохранить заметку"
+#: window.vala:96
+msgid "Save Note"
+msgstr "Сохранить Заметку"
 
-#: window.ui:139
-msgid "save note as"
-msgstr "сохранить заметку как"
+#: window.vala:100
+msgid "Save Note as…"
+msgstr "Сохранить Заметку как..."
 
-#: window.vala:86 window.vala:110 window.vala:141
+#: window.vala:133 window.vala:163 window.vala:200
 msgid "Choose a note"
 msgstr "Выберите заметку"
 
-#: window.vala:90
-msgid "Delete note "
-msgstr "Удалить заметку "
+#: window.vala:137
+msgid "Delete Note?"
+msgstr "Удалить Заметку?"
 
-#: window.vala:91 window.vala:122
-msgid "Question"
-msgstr "Вопрос"
+#: window.vala:137
+#, c-format
+msgid "Delete note “%s”?"
+msgstr "Удалить заметку \"%s\"?"
 
-#: window.vala:97
+#: window.vala:138 window.vala:175
+msgid "_Cancel"
+msgstr "_Отмена"
+
+#: window.vala:139 window.vala:176 window.vala:224 window.vala:345
+msgid "_OK"
+msgstr "_OK"
+
+#: window.vala:148
 msgid "Delete failed"
 msgstr "Не удалось удалить"
 
-#: window.vala:117 window.vala:148
+#: window.vala:170 window.vala:207
 msgid "Nothing to save"
 msgstr "Нечего сохранять"
 
-#: window.vala:121
-msgid "Save note "
-msgstr "Сохранить заметку "
+#: window.vala:174
+msgid "Save Note?"
+msgstr "Сохранить Заметку?"
 
-#: window.vala:151
+#: window.vala:174
+#, c-format
+msgid "Save note “%s”?"
+msgstr "Сохранить заметку \"%s\"?"
+
+#: window.vala:210
 msgid "Save note"
 msgstr "Сохранить заметку"
 
-#: window.vala:154
+#: window.vala:213
 msgid "_Name:"
 msgstr "_Имя:"
 
-#: window.vala:161
-msgid "CLOSE"
-msgstr "ЗАКРЫТЬ"
+#: window.vala:223
+msgid "_Close"
+msgstr "_Закрыть"
 
-#: window.vala:170
+#: window.vala:233
 msgid "Enter the name"
 msgstr "Введите имя"
 
-#: window.vala:179
+#: window.vala:242
 msgid "Rename failed"
 msgstr "Не удалось переименовать"
 
-#: window.vala:189
+#: window.vala:252
 msgid "A note with the same name already exists"
 msgstr "Заметка с таким именем уже существует"
 
-#: window.vala:271
-msgid "Message"
-msgstr "Сообщение"
+#~ msgid "add note"
+#~ msgstr "добавить заметку"
+
+#~ msgid "delete note"
+#~ msgstr "удалить заметку"
+
+#~ msgid "save note"
+#~ msgstr "сохранить заметку"
+
+#~ msgid "Question"
+#~ msgstr "Вопрос"
+
+#~ msgid "CLOSE"
+#~ msgstr "ЗАКРЫТЬ"
+
+#~ msgid "Message"
+#~ msgstr "Сообщение"
