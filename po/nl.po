@@ -41,17 +41,17 @@ msgid "column"
 msgstr "Kolom"
 
 #: src/window.ui:106
-msgid "add note"
-msgstr "Aantekening toevoegen"
+msgid "Add Note"
+msgstr "Aantekening Toevoegen"
 
 #: src/window.ui:115
-msgid "delete note"
-msgstr "Aantekening verwijderen"
+msgid "Delete Note"
+msgstr "Aantekening Verwijderen"
 
 #: src/window.ui:127
-msgid "save note"
-msgstr "Aantekening opslaan"
+msgid "Save Note"
+msgstr "Aantekening Opslaan"
 
 #: src/window.ui:139
-msgid "save note as"
-msgstr "Aantekening opslaan als"
+msgid "Save Note as…"
+msgstr "Aantekening Opslaan als…"

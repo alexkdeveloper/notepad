@@ -16,20 +16,20 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: window.ui:106
-msgid "add note"
-msgstr "přidat poznámku"
+msgid "Add Note"
+msgstr "Přidat Poznámku"
 
 #: window.ui:115
-msgid "delete note"
-msgstr "odstranit poznámku"
+msgid "Delete Note"
+msgstr "Odstranit Poznámku"
 
 #: window.ui:127
-msgid "save note"
-msgstr "uložit poznámku"
+msgid "Save Note"
+msgstr "Uložit Poznámku"
 
 #: window.ui:139
-msgid "save note as"
-msgstr "uložit poznámku jako"
+msgid "Save Note as…"
+msgstr "Uložit Poznámku jako…"
 
 #: window.vala:86 window.vala:110 window.vala:141
 msgid "Choose a note"
