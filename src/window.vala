@@ -230,7 +230,7 @@ namespace Notepad {
         switch (response_id) {
 		case Gtk.ResponseType.OK:
 		if(is_empty(entry_name.get_text())){
-		    set_toast(_("Enter the name"));
+		    alert(_("Enter the name"),"");
             entry_name.grab_focus();
             return;
 		}
