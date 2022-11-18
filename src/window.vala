@@ -139,7 +139,7 @@ namespace Notepad {
             delete_note_dialog.add_response("ok", _("_OK"));
             delete_note_dialog.set_default_response("ok");
             delete_note_dialog.set_close_response("cancel");
-            delete_note_dialog.set_response_appearance("ok", SUGGESTED);
+            delete_note_dialog.set_response_appearance("ok", DESTRUCTIVE);
             delete_note_dialog.show();
             delete_note_dialog.response.connect((response) => {
                 if (response == "ok") {
@@ -209,6 +209,8 @@ namespace Notepad {
          }
         var dialog_save_note = new Gtk.Dialog.with_buttons (_("Save note"), this, Gtk.DialogFlags.MODAL);
 		var content_area = dialog_save_note.get_content_area ();
+        content_area.vexpand = true;
+        content_area.valign = Gtk.Align.CENTER;
         entry_name = new Gtk.Entry();
         var label_name = new Gtk.Label.with_mnemonic (_("_Name:"));
         label_name.set_xalign (0);
