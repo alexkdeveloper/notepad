@@ -15,70 +15,169 @@ msgstr ""
 "X-Poedit-Basepath: ../src\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: window.ui:106
+#: data/com.github.alexkdeveloper.notepad.desktop.in:3
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:6
+msgid "Notepad"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.desktop.in:4
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:7
+msgid "Easy to create text notes"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:9
+msgid "Program for easy creation of text notes."
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:14
+msgid "Alex Kryuchkov"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:28
+msgid "A small update of some dialog boxes"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:35
+msgid "Improved compatibility with GNOME HIG"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:42
+msgid "Port to AdwMessageDialog"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:49
+msgid "Update to GNOME Platform version 43"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:56
+msgid "Port to GTK4 and libadwaita"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:63
+msgid "Update Italian translation"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:70
+msgid "Update Czech translation"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:77
+msgid "Added Russian translation"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:84
+msgid "Update to GNOME Platform 42"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:85
+msgid "Added Czech translation"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:86
+msgid "Added Italian translation"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:87
+msgid "Added Dutch translation"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:94
+msgid "Initial release"
+msgstr ""
+
+#: src/window.vala:88
 msgid "Add Note"
 msgstr "Přidat Poznámku"
 
-#: window.ui:115
+#: src/window.vala:92
 msgid "Delete Note"
 msgstr "Odstranit Poznámku"
 
-#: window.ui:127
+#: src/window.vala:96
 msgid "Save Note"
 msgstr "Uložit Poznámku"
 
-#: window.ui:139
+#: src/window.vala:100
 msgid "Save Note as…"
 msgstr "Uložit Poznámku jako…"
 
-#: window.vala:86 window.vala:110 window.vala:141
+#: src/window.vala:133 src/window.vala:163 src/window.vala:200
 msgid "Choose a note"
 msgstr "Vyberte poznámku"
 
-#: window.vala:90
-msgid "Delete note "
+#: src/window.vala:137
+#, fuzzy
+#| msgid "Delete Note"
+msgid "Delete Note?"
+msgstr "Odstranit Poznámku"
+
+#: src/window.vala:137
+#, fuzzy, c-format
+#| msgid "Delete note "
+msgid "Delete note “%s”?"
 msgstr "Odstranit poznámku "
 
-#: window.vala:91 window.vala:122
-msgid "Question"
-msgstr "Otázka"
+#: src/window.vala:138 src/window.vala:175
+msgid "_Cancel"
+msgstr ""
 
-#: window.vala:97
+#: src/window.vala:139 src/window.vala:176 src/window.vala:226
+#: src/window.vala:347
+msgid "_OK"
+msgstr ""
+
+#: src/window.vala:148
 msgid "Delete failed"
 msgstr "Odstranění se nezdačilo"
 
-#: window.vala:117 window.vala:148
+#: src/window.vala:170 src/window.vala:207
 msgid "Nothing to save"
 msgstr "Nic není k uložení"
 
-#: window.vala:121
-msgid "Save note "
-msgstr "Uložit poznámku "
+#: src/window.vala:174
+#, fuzzy
+#| msgid "Save Note"
+msgid "Save Note?"
+msgstr "Uložit Poznámku"
 
-#: window.vala:151
+#: src/window.vala:174
+#, fuzzy, c-format
+#| msgid "Save Note as…"
+msgid "Save note “%s”?"
+msgstr "Uložit Poznámku jako…"
+
+#: src/window.vala:210
 msgid "Save note"
 msgstr "Uložit poznámku"
 
-#: window.vala:154
+#: src/window.vala:215
 msgid "_Name:"
 msgstr "_Název:"
 
-#: window.vala:161
-msgid "CLOSE"
-msgstr "ZAVŘÍT"
+#: src/window.vala:225
+msgid "_Close"
+msgstr ""
 
-#: window.vala:170
+#: src/window.vala:235
 msgid "Enter the name"
 msgstr "Zadejte název"
 
-#: window.vala:179
+#: src/window.vala:244
 msgid "Rename failed"
 msgstr "Přejmenování se nezdačilo"
 
-#: window.vala:189
+#: src/window.vala:254
 msgid "A note with the same name already exists"
 msgstr "Poznámka se stejným názvem již existuje"
 
-#: window.vala:271
-msgid "Message"
-msgstr "Zpráva"
+#~ msgid "Question"
+#~ msgstr "Otázka"
+
+#~ msgid "Save note "
+#~ msgstr "Uložit poznámku "
+
+#~ msgid "CLOSE"
+#~ msgstr "ZAVŘÍT"
+
+#~ msgid "Message"
+#~ msgstr "Zpráva"

@@ -1,19 +1,21 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: 2022-10-01 13:41+0800\n"
-"PO-Revision-Date: 2022-10-01 13:53+0800\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: ru_RU\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-14 10:43+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.1.1\n"
-"X-Poedit-Basepath: ../src\n"
-"X-Poedit-SearchPath-0: .\n"
 
 #: data/com.github.alexkdeveloper.notepad.desktop.in:3
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:6
@@ -87,97 +89,79 @@ msgstr ""
 
 #: src/window.vala:88
 msgid "Add Note"
-msgstr "Добавить Заметку"
+msgstr ""
 
 #: src/window.vala:92
 msgid "Delete Note"
-msgstr "Удалить Заметку "
+msgstr ""
 
 #: src/window.vala:96
 msgid "Save Note"
-msgstr "Сохранить Заметку"
+msgstr ""
 
 #: src/window.vala:100
 msgid "Save Note as…"
-msgstr "Сохранить Заметку как..."
+msgstr ""
 
 #: src/window.vala:133 src/window.vala:163 src/window.vala:200
 msgid "Choose a note"
-msgstr "Выберите заметку"
+msgstr ""
 
 #: src/window.vala:137
 msgid "Delete Note?"
-msgstr "Удалить Заметку?"
+msgstr ""
 
 #: src/window.vala:137
 #, c-format
 msgid "Delete note “%s”?"
-msgstr "Удалить заметку \"%s\"?"
+msgstr ""
 
 #: src/window.vala:138 src/window.vala:175
 msgid "_Cancel"
-msgstr "_Отмена"
+msgstr ""
 
 #: src/window.vala:139 src/window.vala:176 src/window.vala:226
 #: src/window.vala:347
 msgid "_OK"
-msgstr "_OK"
+msgstr ""
 
 #: src/window.vala:148
 msgid "Delete failed"
-msgstr "Не удалось удалить"
+msgstr ""
 
 #: src/window.vala:170 src/window.vala:207
 msgid "Nothing to save"
-msgstr "Нечего сохранять"
+msgstr ""
 
 #: src/window.vala:174
 msgid "Save Note?"
-msgstr "Сохранить Заметку?"
+msgstr ""
 
 #: src/window.vala:174
 #, c-format
 msgid "Save note “%s”?"
-msgstr "Сохранить заметку \"%s\"?"
+msgstr ""
 
 #: src/window.vala:210
 msgid "Save note"
-msgstr "Сохранить заметку"
+msgstr ""
 
 #: src/window.vala:215
 msgid "_Name:"
-msgstr "_Имя:"
+msgstr ""
 
 #: src/window.vala:225
 msgid "_Close"
-msgstr "_Закрыть"
+msgstr ""
 
 #: src/window.vala:235
 msgid "Enter the name"
-msgstr "Введите имя"
+msgstr ""
 
 #: src/window.vala:244
 msgid "Rename failed"
-msgstr "Не удалось переименовать"
+msgstr ""
 
 #: src/window.vala:254
 msgid "A note with the same name already exists"
-msgstr "Заметка с таким именем уже существует"
-
-#~ msgid "add note"
-#~ msgstr "добавить заметку"
-
-#~ msgid "delete note"
-#~ msgstr "удалить заметку"
-
-#~ msgid "save note"
-#~ msgstr "сохранить заметку"
-
-#~ msgid "Question"
-#~ msgstr "Вопрос"
-
-#~ msgid "CLOSE"
-#~ msgstr "ЗАКРЫТЬ"
-
-#~ msgid "Message"
-#~ msgstr "Сообщение"
+msgstr ""

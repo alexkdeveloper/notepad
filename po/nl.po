@@ -36,22 +36,146 @@ msgstr "Een toepassing voor het maken van eenvoudige aantekeningen."
 msgid "Alex Kryuchkov"
 msgstr "Alex Kryuchkov"
 
-#: src/window.ui:56
-msgid "column"
-msgstr "Kolom"
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:28
+msgid "A small update of some dialog boxes"
+msgstr ""
 
-#: src/window.ui:106
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:35
+msgid "Improved compatibility with GNOME HIG"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:42
+msgid "Port to AdwMessageDialog"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:49
+msgid "Update to GNOME Platform version 43"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:56
+msgid "Port to GTK4 and libadwaita"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:63
+msgid "Update Italian translation"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:70
+msgid "Update Czech translation"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:77
+msgid "Added Russian translation"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:84
+msgid "Update to GNOME Platform 42"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:85
+msgid "Added Czech translation"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:86
+msgid "Added Italian translation"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:87
+msgid "Added Dutch translation"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:94
+msgid "Initial release"
+msgstr ""
+
+#: src/window.vala:88
 msgid "Add Note"
 msgstr "Aantekening Toevoegen"
 
-#: src/window.ui:115
+#: src/window.vala:92
 msgid "Delete Note"
 msgstr "Aantekening Verwijderen"
 
-#: src/window.ui:127
+#: src/window.vala:96
 msgid "Save Note"
 msgstr "Aantekening Opslaan"
 
-#: src/window.ui:139
+#: src/window.vala:100
 msgid "Save Note as…"
 msgstr "Aantekening Opslaan als…"
+
+#: src/window.vala:133 src/window.vala:163 src/window.vala:200
+msgid "Choose a note"
+msgstr ""
+
+#: src/window.vala:137
+#, fuzzy
+#| msgid "Delete Note"
+msgid "Delete Note?"
+msgstr "Aantekening Verwijderen"
+
+#: src/window.vala:137
+#, fuzzy, c-format
+#| msgid "Delete Note"
+msgid "Delete note “%s”?"
+msgstr "Aantekening Verwijderen"
+
+#: src/window.vala:138 src/window.vala:175
+msgid "_Cancel"
+msgstr ""
+
+#: src/window.vala:139 src/window.vala:176 src/window.vala:226
+#: src/window.vala:347
+msgid "_OK"
+msgstr ""
+
+#: src/window.vala:148
+#, fuzzy
+#| msgid "Delete Note"
+msgid "Delete failed"
+msgstr "Aantekening Verwijderen"
+
+#: src/window.vala:170 src/window.vala:207
+msgid "Nothing to save"
+msgstr ""
+
+#: src/window.vala:174
+#, fuzzy
+#| msgid "Save Note"
+msgid "Save Note?"
+msgstr "Aantekening Opslaan"
+
+#: src/window.vala:174
+#, fuzzy, c-format
+#| msgid "Save Note as…"
+msgid "Save note “%s”?"
+msgstr "Aantekening Opslaan als…"
+
+#: src/window.vala:210
+#, fuzzy
+#| msgid "Save Note"
+msgid "Save note"
+msgstr "Aantekening Opslaan"
+
+#: src/window.vala:215
+msgid "_Name:"
+msgstr ""
+
+#: src/window.vala:225
+msgid "_Close"
+msgstr ""
+
+#: src/window.vala:235
+msgid "Enter the name"
+msgstr ""
+
+#: src/window.vala:244
+msgid "Rename failed"
+msgstr ""
+
+#: src/window.vala:254
+msgid "A note with the same name already exists"
+msgstr ""
+
+#~ msgid "column"
+#~ msgstr "Kolom"
