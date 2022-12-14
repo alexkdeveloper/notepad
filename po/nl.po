@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: notepad\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 18:09+0200\n"
-"PO-Revision-Date: 2022-04-29 18:11+0200\n"
+"POT-Creation-Date: 2022-12-14 10:43+0300\n"
+"PO-Revision-Date: 2022-12-14 17:20+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: data/com.github.alexkdeveloper.notepad.desktop.in:3
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:6
@@ -38,144 +38,134 @@ msgstr "Alex Kryuchkov"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:28
 msgid "A small update of some dialog boxes"
-msgstr ""
+msgstr "Kleine aanpassingen aan enkele dialoogvensters"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:35
 msgid "Improved compatibility with GNOME HIG"
-msgstr ""
+msgstr "Verbeterde compatibiliteit met de GNOME HIG"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:42
 msgid "Port to AdwMessageDialog"
-msgstr ""
+msgstr "Overgezet naar AdwMessageDialog"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:49
 msgid "Update to GNOME Platform version 43"
-msgstr ""
+msgstr "Bijgewerkt naar GNOME-platform versie 43"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:56
 msgid "Port to GTK4 and libadwaita"
-msgstr ""
+msgstr "Overgezet naar GTK4 en libadwaita"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:63
 msgid "Update Italian translation"
-msgstr ""
+msgstr "Bijgewerkt: Italiaanse vertaling"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:70
 msgid "Update Czech translation"
-msgstr ""
+msgstr "Bijgewerkt: Tsjechische vertaling"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:77
 msgid "Added Russian translation"
-msgstr ""
+msgstr "Nieuw: Russische vertaling"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:84
 msgid "Update to GNOME Platform 42"
-msgstr ""
+msgstr "Bijgewerkt naar GNOME-platform versie 42"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:85
 msgid "Added Czech translation"
-msgstr ""
+msgstr "Nieuw: Tsjechische vertaling"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:86
 msgid "Added Italian translation"
-msgstr ""
+msgstr "Nieuw: Italiaanse vertaling"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:87
 msgid "Added Dutch translation"
-msgstr ""
+msgstr "Nieuw: Nederlandse vertaling"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:94
 msgid "Initial release"
-msgstr ""
+msgstr "Eerste versie"
 
 #: src/window.vala:88
 msgid "Add Note"
-msgstr "Aantekening Toevoegen"
+msgstr "Aantekening toevoegen"
 
 #: src/window.vala:92
 msgid "Delete Note"
-msgstr "Aantekening Verwijderen"
+msgstr "Aantekening verwijderen"
 
 #: src/window.vala:96
 msgid "Save Note"
-msgstr "Aantekening Opslaan"
+msgstr "Aantekening opslaan"
 
 #: src/window.vala:100
 msgid "Save Note as…"
-msgstr "Aantekening Opslaan als…"
+msgstr "Aantekening opslaan als…"
 
 #: src/window.vala:133 src/window.vala:163 src/window.vala:200
 msgid "Choose a note"
-msgstr ""
+msgstr "Kies een aantekening"
 
 #: src/window.vala:137
-#, fuzzy
-#| msgid "Delete Note"
 msgid "Delete Note?"
-msgstr "Aantekening Verwijderen"
+msgstr "Aantekening verwijderen?"
 
 #: src/window.vala:137
-#, fuzzy, c-format
-#| msgid "Delete Note"
+#, c-format
 msgid "Delete note “%s”?"
-msgstr "Aantekening Verwijderen"
+msgstr "Weet u zeker dat u %s wilt verwijderen?"
 
 #: src/window.vala:138 src/window.vala:175
 msgid "_Cancel"
-msgstr ""
+msgstr "_Annuleren"
 
 #: src/window.vala:139 src/window.vala:176 src/window.vala:226
 #: src/window.vala:347
 msgid "_OK"
-msgstr ""
+msgstr "_Oké"
 
 #: src/window.vala:148
-#, fuzzy
-#| msgid "Delete Note"
 msgid "Delete failed"
-msgstr "Aantekening Verwijderen"
+msgstr "Verwijderen mislukt"
 
 #: src/window.vala:170 src/window.vala:207
 msgid "Nothing to save"
-msgstr ""
+msgstr "Er is niets om op te slaan"
 
 #: src/window.vala:174
-#, fuzzy
-#| msgid "Save Note"
 msgid "Save Note?"
-msgstr "Aantekening Opslaan"
+msgstr "Aantekening opslaan?"
 
 #: src/window.vala:174
-#, fuzzy, c-format
-#| msgid "Save Note as…"
+#, c-format
 msgid "Save note “%s”?"
-msgstr "Aantekening Opslaan als…"
+msgstr "Wilt u %s opslaan?"
 
 #: src/window.vala:210
-#, fuzzy
-#| msgid "Save Note"
 msgid "Save note"
-msgstr "Aantekening Opslaan"
+msgstr "Aantekening opslaan"
 
 #: src/window.vala:215
 msgid "_Name:"
-msgstr ""
+msgstr "_Naam:"
 
 #: src/window.vala:225
 msgid "_Close"
-msgstr ""
+msgstr "_Sluiten"
 
 #: src/window.vala:235
 msgid "Enter the name"
-msgstr ""
+msgstr "Voer een naam in"
 
 #: src/window.vala:244
 msgid "Rename failed"
-msgstr ""
+msgstr "Naamswijziging mislukt"
 
 #: src/window.vala:254
 msgid "A note with the same name already exists"
-msgstr ""
+msgstr "Er is al een aantekening met deze naam"
 
 #~ msgid "column"
 #~ msgstr "Kolom"
