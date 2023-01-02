@@ -168,3 +168,7 @@ msgstr "Yeniden adlandırılamadı"
 #: src/window.vala:254
 msgid "A note with the same name already exists"
 msgstr "Aynı adla bir not zaten var"
+
+#: src/window.vala:425
+msgid "translator-credits"
+msgstr "Sabri Ünal <libreajans@gmail.com>"

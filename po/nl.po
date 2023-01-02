@@ -167,5 +167,9 @@ msgstr "Naamswijziging mislukt"
 msgid "A note with the same name already exists"
 msgstr "Er is al een aantekening met deze naam"
 
+#: src/window.vala:425
+msgid "translator-credits"
+msgstr "Heimen Stoffels <vistausss@fastmail.com>"
+
 #~ msgid "column"
 #~ msgstr "Kolom"

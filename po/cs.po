@@ -170,6 +170,10 @@ msgstr "Přejmenování se nezdačilo"
 msgid "A note with the same name already exists"
 msgstr "Poznámka se stejným názvem již existuje"
 
+#: src/window.vala:425
+msgid "translator-credits"
+msgstr ""
+
 #~ msgid "Question"
 #~ msgstr "Otázka"
 

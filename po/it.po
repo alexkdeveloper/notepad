@@ -177,5 +177,9 @@ msgstr ""
 msgid "A note with the same name already exists"
 msgstr ""
 
+#: src/window.vala:425
+msgid "translator-credits"
+msgstr "Albano Battistella <albano_battistella@hotmail.com>"
+
 #~ msgid "column"
 #~ msgstr "colonna"
