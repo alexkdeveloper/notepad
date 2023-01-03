@@ -42,8 +42,8 @@ namespace Notepad {
             delete_button.clicked.connect(on_delete_clicked);
             save_button.clicked.connect(on_save_clicked);
             save_as_button.clicked.connect(on_save_as_clicked);
-            list_box.row_selected.connect(on_select_item);
             search_button.clicked.connect(on_search_clicked);
+            list_box.row_selected.connect(on_select_item);
             var css_provider = new Gtk.CssProvider();
             css_provider.load_from_data((uint8[])".text_size {font-size: 18px}");
             Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
