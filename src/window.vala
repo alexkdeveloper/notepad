@@ -62,7 +62,6 @@ namespace Notepad {
     construct{
         list_box = new Gtk.ListBox ();
         list_box.vexpand = true;
-        list_box.row_selected.connect(on_select_item);
         var scroll = new Gtk.ScrolledWindow () {
             propagate_natural_height = true,
             propagate_natural_width = true
