@@ -39,22 +39,11 @@ namespace Notepad {
             default_height: 400,
             default_width: 700);
 			add_button.clicked.connect(on_add_clicked);
-            delete_button.clicked.connect (on_delete_clicked);
-            save_button.clicked.connect (on_save_clicked);
+            delete_button.clicked.connect(on_delete_clicked);
+            save_button.clicked.connect(on_save_clicked);
             save_as_button.clicked.connect(on_save_as_clicked);
             list_box.row_selected.connect(on_select_item);
-            search_button.clicked.connect(()=>{
-               if(entry_search.is_visible()){
-                  entry_search.hide();
-                  entry_search.set_text("");
-                  if(item != ""){
-                    list_box.select_row(list_box.get_row_at_index(get_index(item)));
-                  }
-               }else{
-                  entry_search.show();
-                  entry_search.grab_focus();
-               }
-            });
+            search_button.clicked.connect(on_search_clicked);
             var css_provider = new Gtk.CssProvider();
             css_provider.load_from_data((uint8[])".text_size {font-size: 18px}");
             Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
@@ -159,6 +148,36 @@ namespace Notepad {
         main_box.append(headerbar);
         main_box.append(overlay);
         set_content(main_box);
+
+        var event_controller = new Gtk.EventControllerKey ();
+        event_controller.key_pressed.connect ((keyval, keycode, state) => {
+            if (Gdk.ModifierType.CONTROL_MASK in state && keyval == Gdk.Key.q) {
+                app.quit();
+            }
+
+            if (Gdk.ModifierType.CONTROL_MASK in state && keyval == Gdk.Key.n) {
+                 on_add_clicked();
+            }
+
+             if (Gdk.ModifierType.CONTROL_MASK in state && keyval == Gdk.Key.d) {
+                 on_delete_clicked();
+            }
+
+             if (Gdk.ModifierType.CONTROL_MASK in state && keyval == Gdk.Key.s) {
+                 on_save_clicked();
+            }
+
+             if (Gdk.ModifierType.CONTROL_MASK in state && Gdk.ModifierType.SHIFT_MASK in state && keyval == Gdk.Key.S) {
+                 on_save_as_clicked();
+            }
+
+             if (Gdk.ModifierType.CONTROL_MASK in state && keyval == Gdk.Key.f) {
+                 on_search_clicked();
+            }
+
+            return false;
+        });
+        ((Gtk.Widget)this).add_controller(event_controller);
     }
       private void on_add_clicked(){
         GLib.File file = GLib.File.new_for_path(directory_path+"/"+date_time());
@@ -311,6 +330,19 @@ namespace Notepad {
 		break;
 		}
 }
+
+      private void on_search_clicked(){
+          if(entry_search.is_visible()){
+                  entry_search.hide();
+                  entry_search.set_text("");
+                  if(item != ""){
+                    list_box.select_row(list_box.get_row_at_index(get_index(item)));
+                  }
+               }else{
+                  entry_search.show();
+                  entry_search.grab_focus();
+               }
+    }
 
       private void on_select_item () {
         var selection = list_box.get_selected_row();
