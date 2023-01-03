@@ -116,7 +116,7 @@ msgstr "Eliminare la nota?"
 #: src/window.vala:137
 #| msgid "Delete Note"
 msgid "Delete note “%s”?"
-msgstr "Eliminare la nota "%s"?"
+msgstr "Eliminare la nota “%s”?"
 
 #: src/window.vala:138 src/window.vala:175
 msgid "_Cancel"
@@ -144,7 +144,7 @@ msgstr "Salvare la nota?"
 #: src/window.vala:174
 #| msgid "Save Note as…"
 msgid "Save note “%s”?"
-msgstr "Salvare la nota "%s"?"
+msgstr "Salvare la nota “%s”?"
 
 #: src/window.vala:210
 #| msgid "Save Note"
