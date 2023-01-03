@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: notepad\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-29 18:09+0200\n"
-"PO-Revision-Date: 2022-06-02 13:11+0100\n"
+"PO-Revision-Date: 2023-01-02 21:11+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -38,55 +38,55 @@ msgstr "Alex Kryuchkov"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:28
 msgid "A small update of some dialog boxes"
-msgstr ""
+msgstr "Un piccolo aggiornamento di alcune finestre di dialogo"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:35
 msgid "Improved compatibility with GNOME HIG"
-msgstr ""
+msgstr "Compatibilità migliorata con GNOME HIG"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:42
 msgid "Port to AdwMessageDialog"
-msgstr ""
+msgstr "Port a AdwMessageDialog"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:49
 msgid "Update to GNOME Platform version 43"
-msgstr ""
+msgstr "Aggiornamento alla versione 43 della piattaforma GNOME"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:56
 msgid "Port to GTK4 and libadwaita"
-msgstr ""
+msgstr "Port a GTK4 e libadwaita"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:63
 msgid "Update Italian translation"
-msgstr ""
+msgstr "Aggiornata la traduzione italiana"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:70
 msgid "Update Czech translation"
-msgstr ""
+msgstr "Aggiornata la traduzione ceca"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:77
 msgid "Added Russian translation"
-msgstr ""
+msgstr "Aggiunta traduzione russa"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:84
 msgid "Update to GNOME Platform 42"
-msgstr ""
+msgstr "Aggiornamento alla piattaforma GNOME 42"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:85
 msgid "Added Czech translation"
-msgstr ""
+msgstr "Aggiunta traduzione ceca"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:86
 msgid "Added Italian translation"
-msgstr ""
+msgstr "Aggiunta traduzione italiana"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:87
 msgid "Added Dutch translation"
-msgstr ""
+msgstr "Aggiunta traduzione olandese"
 
 #: data/com.github.alexkdeveloper.notepad.appdata.xml.in:94
 msgid "Initial release"
-msgstr ""
+msgstr "Versione iniziale"
 
 #: src/window.vala:88
 msgid "Add Note"
@@ -106,76 +106,70 @@ msgstr "Salva Nota come…"
 
 #: src/window.vala:133 src/window.vala:163 src/window.vala:200
 msgid "Choose a note"
-msgstr ""
+msgstr "Scegli una nota"
 
 #: src/window.vala:137
-#, fuzzy
 #| msgid "Delete Note"
 msgid "Delete Note?"
-msgstr "Cancella Nota"
+msgstr "Eliminare la nota?"
 
 #: src/window.vala:137
-#, fuzzy, c-format
 #| msgid "Delete Note"
 msgid "Delete note “%s”?"
-msgstr "Cancella Nota"
+msgstr "Eliminare la nota "%s"?"
 
 #: src/window.vala:138 src/window.vala:175
 msgid "_Cancel"
-msgstr ""
+msgstr "_Cancella"
 
 #: src/window.vala:139 src/window.vala:176 src/window.vala:226
 #: src/window.vala:347
 msgid "_OK"
-msgstr ""
+msgstr "_OK"
 
 #: src/window.vala:148
-#, fuzzy
 #| msgid "Delete Note"
 msgid "Delete failed"
-msgstr "Cancella Nota"
+msgstr "Eliminazione fallita"
 
 #: src/window.vala:170 src/window.vala:207
 msgid "Nothing to save"
-msgstr ""
+msgstr "Niente da salvare"
 
 #: src/window.vala:174
-#, fuzzy
 #| msgid "Save Note"
 msgid "Save Note?"
-msgstr "Salva Nota"
+msgstr "Salvare la nota?"
 
 #: src/window.vala:174
-#, fuzzy, c-format
 #| msgid "Save Note as…"
 msgid "Save note “%s”?"
-msgstr "Salva Nota come…"
+msgstr "Salvare la nota "%s"?"
 
 #: src/window.vala:210
-#, fuzzy
 #| msgid "Save Note"
 msgid "Save note"
 msgstr "Salva Nota"
 
 #: src/window.vala:215
 msgid "_Name:"
-msgstr ""
+msgstr "_Nome:"
 
 #: src/window.vala:225
 msgid "_Close"
-msgstr ""
+msgstr "_Chiudi"
 
 #: src/window.vala:235
 msgid "Enter the name"
-msgstr ""
+msgstr "Inserisci il nome"
 
 #: src/window.vala:244
 msgid "Rename failed"
-msgstr ""
+msgstr "Rinomina non riuscita"
 
 #: src/window.vala:254
 msgid "A note with the same name already exists"
-msgstr ""
+msgstr "Esiste già una nota con lo stesso nome"
 
 #: src/window.vala:425
 msgid "translator-credits"
