@@ -43,7 +43,6 @@ namespace Notepad {
             save_button.clicked.connect(on_save_clicked);
             save_as_button.clicked.connect(on_save_as_clicked);
             search_button.clicked.connect(on_search_clicked);
-            list_box.row_selected.connect(on_select_item);
             var css_provider = new Gtk.CssProvider();
             css_provider.load_from_data((uint8[])".text_size {font-size: 18px}");
             Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
@@ -62,6 +61,7 @@ namespace Notepad {
     construct{
         list_box = new Gtk.ListBox ();
         list_box.vexpand = true;
+        list_box.row_selected.connect(on_select_item);
         var scroll = new Gtk.ScrolledWindow () {
             propagate_natural_height = true,
             propagate_natural_width = true
@@ -158,7 +158,7 @@ namespace Notepad {
                  on_add_clicked();
             }
 
-             if (Gdk.ModifierType.CONTROL_MASK in state && keyval == Gdk.Key.d) {
+             if (Gdk.ModifierType.CONTROL_MASK in state && keyval == Gdk.Key.d || keyval == Gdk.Key.r) {
                  on_delete_clicked();
             }
 
