@@ -158,7 +158,7 @@ namespace Notepad {
                  on_add_clicked();
             }
 
-             if (Gdk.ModifierType.CONTROL_MASK in state && keyval == Gdk.Key.d || keyval == Gdk.Key.r) {
+             if (Gdk.ModifierType.CONTROL_MASK in state && (keyval == Gdk.Key.d || keyval == Gdk.Key.r)) {
                  on_delete_clicked();
             }
 
