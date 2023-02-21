@@ -148,6 +148,8 @@ namespace Notepad {
         main_box.append(overlay);
         set_content(main_box);
 
+        close_request.connect(on_close_application);
+
         var event_controller = new Gtk.EventControllerKey ();
         event_controller.key_pressed.connect ((keyval, keycode, state) => {
             if (Gdk.ModifierType.CONTROL_MASK in state && keyval == Gdk.Key.q) {
@@ -343,11 +345,80 @@ namespace Notepad {
                }
     }
 
+    private bool on_close_application(){
+        var app = GLib.Application.get_default();
+           GLib.File file = GLib.File.new_for_path(directory_path+"/"+item);
+           if(item != "" && file.query_exists()){
+           string note_text;
+            try {
+                FileUtils.get_contents (file.get_path(), out note_text);
+            } catch (Error e) {
+               stderr.printf ("Error: %s\n", e.message);
+            }
+            string edit_text = text_view.buffer.text.strip();;
+        if(note_text.strip() != edit_text){
+        var save_change_dialog = new Adw.MessageDialog(this, _("Changes are not saved"), _("Save changes to the current note before exiting the program?"));
+            save_change_dialog.add_response("cancel", _("_Cancel"));
+            save_change_dialog.add_response("ok", _("_OK"));
+            save_change_dialog.set_default_response("ok");
+            save_change_dialog.set_close_response("cancel");
+            save_change_dialog.set_response_appearance("ok", SUGGESTED);
+            save_change_dialog.show();
+            save_change_dialog.response.connect((response) => {
+                if (response == "ok") {
+                try {
+                 FileUtils.set_contents (file.get_path(), edit_text);
+              } catch (Error e) {
+                     stderr.printf ("Error: %s\n", e.message);
+             }
+                 }
+                save_change_dialog.close();
+                app.quit();
+            });
+        }else{
+            app.quit();
+        }
+    }else{
+         app.quit();
+       }
+       return true;
+    }
+
       private void on_select_item () {
         var selection = list_box.get_selected_row();
            if (!selection.is_selected()) {
                return;
            }
+           string prev_item = item;
+           GLib.File file = GLib.File.new_for_path(directory_path+"/"+prev_item);
+           if(prev_item != "" && file.query_exists()){
+           string note_text;
+            try {
+                FileUtils.get_contents (file.get_path(), out note_text);
+            } catch (Error e) {
+               stderr.printf ("Error: %s\n", e.message);
+            }
+            string edit_text = text_view.buffer.text.strip();;
+        if(note_text.strip() != edit_text){
+        var save_change_dialog = new Adw.MessageDialog(this, _("Changes are not saved"), _("Save the changes in the previous note?"));
+            save_change_dialog.add_response("cancel", _("_Cancel"));
+            save_change_dialog.add_response("ok", _("_OK"));
+            save_change_dialog.set_default_response("ok");
+            save_change_dialog.set_close_response("cancel");
+            save_change_dialog.set_response_appearance("ok", SUGGESTED);
+            save_change_dialog.show();
+            save_change_dialog.response.connect((response) => {
+                if (response == "ok") {
+                try {
+                 FileUtils.set_contents (file.get_path(), edit_text);
+              } catch (Error e) {
+                     stderr.printf ("Error: %s\n", e.message);
+             }
+                 }
+                save_change_dialog.close();
+            });
+        }
+    }
           GLib.Value value = "";
           selection.get_property("title", ref value);
           item = value.get_string();
@@ -427,7 +498,7 @@ namespace Notepad {
 	        var win = new Adw.AboutWindow () {
                 application_name = "Notepad",
                 application_icon = "com.github.alexkdeveloper.notepad",
-                version = "1.1.0",
+                version = "1.2.0",
                 copyright = "Copyright © 2022-2023 Alex Kryuchkov",
                 license_type = Gtk.License.GPL_3_0,
                 developer_name = "Alex Kryuchkov",
