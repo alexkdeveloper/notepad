@@ -30,12 +30,13 @@ namespace Notepad {
         private Gtk.SearchEntry entry_search;
 
         private Adw.ToastOverlay overlay;
+
 		private string directory_path;
         private string item = "";
         private string note = "";
 
-		public Window (Adw.Application app) {
-			Object (application: app, title: "Notepad",
+		public Window (Adw.Application application) {
+			Object (application: application, title: "Notepad",
             default_height: 400,
             default_width: 700);
 			add_button.clicked.connect(on_add_clicked);
@@ -112,10 +113,10 @@ namespace Notepad {
         var about_action = new GLib.SimpleAction ("about", null);
         about_action.activate.connect (about);
         var quit_action = new GLib.SimpleAction ("quit", null);
-        var app = GLib.Application.get_default();
         quit_action.activate.connect(()=>{
-               app.quit();
-            });
+            on_close_application();
+        });
+        var app = GLib.Application.get_default();
         app.add_action(about_action);
         app.add_action(quit_action);
         var menu = new GLib.Menu();
@@ -153,7 +154,7 @@ namespace Notepad {
         var event_controller = new Gtk.EventControllerKey ();
         event_controller.key_pressed.connect ((keyval, keycode, state) => {
             if (Gdk.ModifierType.CONTROL_MASK in state && keyval == Gdk.Key.q) {
-                app.quit();
+                 on_close_application();
             }
 
             if (Gdk.ModifierType.CONTROL_MASK in state && keyval == Gdk.Key.n) {
