@@ -356,16 +356,16 @@ namespace Notepad {
             } catch (Error e) {
                stderr.printf ("Error: %s\n", e.message);
             }
-            string edit_text = text_view.buffer.text.strip();;
+            string edit_text = text_view.buffer.text.strip();
         if(note_text.strip() != edit_text){
-        var save_change_dialog = new Adw.MessageDialog(this, _("Changes are not saved"), _("Save changes to the current note before exiting the program?"));
-            save_change_dialog.add_response("cancel", _("_Cancel"));
-            save_change_dialog.add_response("ok", _("_OK"));
-            save_change_dialog.set_default_response("ok");
-            save_change_dialog.set_close_response("cancel");
-            save_change_dialog.set_response_appearance("ok", SUGGESTED);
-            save_change_dialog.show();
-            save_change_dialog.response.connect((response) => {
+        var save_changes_dialog = new Adw.MessageDialog(this, _("Changes are not saved"), _("Save changes to the current note before exiting the program?"));
+            save_changes_dialog.add_response("cancel", _("_Cancel"));
+            save_changes_dialog.add_response("ok", _("_OK"));
+            save_changes_dialog.set_default_response("ok");
+            save_changes_dialog.set_close_response("cancel");
+            save_changes_dialog.set_response_appearance("ok", SUGGESTED);
+            save_changes_dialog.show();
+            save_changes_dialog.response.connect((response) => {
                 if (response == "ok") {
                 try {
                  FileUtils.set_contents (file.get_path(), edit_text);
@@ -373,7 +373,7 @@ namespace Notepad {
                      stderr.printf ("Error: %s\n", e.message);
              }
                  }
-                save_change_dialog.close();
+                save_changes_dialog.close();
                 app.quit();
             });
         }else{
@@ -399,16 +399,16 @@ namespace Notepad {
             } catch (Error e) {
                stderr.printf ("Error: %s\n", e.message);
             }
-            string edit_text = text_view.buffer.text.strip();;
+            string edit_text = text_view.buffer.text.strip();
         if(note_text.strip() != edit_text){
-        var save_change_dialog = new Adw.MessageDialog(this, _("Changes are not saved"), _("Save the changes in the previous note?"));
-            save_change_dialog.add_response("cancel", _("_Cancel"));
-            save_change_dialog.add_response("ok", _("_OK"));
-            save_change_dialog.set_default_response("ok");
-            save_change_dialog.set_close_response("cancel");
-            save_change_dialog.set_response_appearance("ok", SUGGESTED);
-            save_change_dialog.show();
-            save_change_dialog.response.connect((response) => {
+        var save_changes_dialog = new Adw.MessageDialog(this, _("Changes are not saved"), _("Save the changes in the previous note?"));
+            save_changes_dialog.add_response("cancel", _("_Cancel"));
+            save_changes_dialog.add_response("ok", _("_OK"));
+            save_changes_dialog.set_default_response("ok");
+            save_changes_dialog.set_close_response("cancel");
+            save_changes_dialog.set_response_appearance("ok", SUGGESTED);
+            save_changes_dialog.show();
+            save_changes_dialog.response.connect((response) => {
                 if (response == "ok") {
                 try {
                  FileUtils.set_contents (file.get_path(), edit_text);
@@ -416,7 +416,7 @@ namespace Notepad {
                      stderr.printf ("Error: %s\n", e.message);
              }
                  }
-                save_change_dialog.close();
+                save_changes_dialog.close();
             });
         }
     }
