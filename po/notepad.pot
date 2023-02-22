@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-02 14:01+0800\n"
+"POT-Creation-Date: 2023-02-22 18:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,96 +19,109 @@ msgstr ""
 "X-Poedit-Basepath: ../src\n"
 "X-Poedit-SearchPath-0: window.vala\n"
 
-#: window.vala:102
+#: window.vala:75
 msgid "Add Note"
 msgstr ""
 
-#: window.vala:106
+#: window.vala:79
 msgid "Delete Note"
 msgstr ""
 
-#: window.vala:110
+#: window.vala:83
 msgid "Search for Notes"
 msgstr ""
 
-#: window.vala:114
+#: window.vala:87
 msgid "Save Note"
 msgstr ""
 
-#: window.vala:118
+#: window.vala:91
 msgid "Save Note as…"
 msgstr ""
 
-#: window.vala:141
+#: window.vala:114
 msgid "About Notepad"
 msgstr ""
 
-#: window.vala:142
+#: window.vala:115
 msgid "Quit"
 msgstr ""
 
-#: window.vala:186 window.vala:216 window.vala:254
+#: window.vala:219 window.vala:246 window.vala:281
 msgid "Choose a note"
 msgstr ""
 
-#: window.vala:190
+#: window.vala:223
 msgid "Delete Note?"
 msgstr ""
 
-#: window.vala:190
+#: window.vala:223
 #, c-format
 msgid "Delete note “%s”?"
 msgstr ""
 
-#: window.vala:191 window.vala:228
+#: window.vala:224 window.vala:258 window.vala:384 window.vala:427
 msgid "_Cancel"
 msgstr ""
 
-#: window.vala:192 window.vala:229 window.vala:280 window.vala:447
+#: window.vala:225 window.vala:259 window.vala:307 window.vala:385
+#: window.vala:428 window.vala:556
 msgid "_OK"
 msgstr ""
 
-#: window.vala:201
+#: window.vala:234
 msgid "Delete failed"
 msgstr ""
 
-#: window.vala:223 window.vala:261
+#: window.vala:253 window.vala:288
 msgid "Nothing to save"
 msgstr ""
 
-#: window.vala:227
+#: window.vala:257
 msgid "Save Note?"
 msgstr ""
 
-#: window.vala:227
+#: window.vala:257
 #, c-format
 msgid "Save note “%s”?"
 msgstr ""
 
-#: window.vala:264
+#: window.vala:291
 msgid "Save note"
 msgstr ""
 
-#: window.vala:269
+#: window.vala:296
 msgid "_Name:"
 msgstr ""
 
-#: window.vala:279
+#: window.vala:306
 msgid "_Close"
 msgstr ""
 
-#: window.vala:289
+#: window.vala:316
 msgid "Enter the name"
 msgstr ""
 
-#: window.vala:298
+#: window.vala:325
 msgid "Rename failed"
 msgstr ""
 
-#: window.vala:308
+#: window.vala:335
 msgid "A note with the same name already exists"
 msgstr ""
 
-#: window.vala:425
+#: window.vala:383 window.vala:426
+msgid "Changes are not saved"
+msgstr ""
+
+#: window.vala:383
+msgid "Save changes to the current note before exiting the program?"
+msgstr ""
+
+#: window.vala:426
+msgid "Save the changes in the previous note?"
+msgstr ""
+
+#: window.vala:534
 msgid "translator-credits"
 msgstr ""
