@@ -356,8 +356,8 @@ namespace Notepad {
             } catch (Error e) {
                stderr.printf ("Error: %s\n", e.message);
             }
-            string edit_text = text_view.buffer.text.strip();
-        if(note_text.strip() != edit_text){
+            string edit_text = text_view.buffer.text;
+        if(note_text != edit_text){
         var save_changes_dialog = new Adw.MessageDialog(this, _("Changes are not saved"), _("Save changes to the current note before exiting the program?"));
             save_changes_dialog.add_response("cancel", _("_Cancel"));
             save_changes_dialog.add_response("ok", _("_OK"));
@@ -399,8 +399,8 @@ namespace Notepad {
             } catch (Error e) {
                stderr.printf ("Error: %s\n", e.message);
             }
-            string edit_text = text_view.buffer.text.strip();
-        if(note_text.strip() != edit_text){
+            string edit_text = text_view.buffer.text;
+        if(note_text != edit_text){
         var save_changes_dialog = new Adw.MessageDialog(this, _("Changes are not saved"), _("Save the changes in the previous note?"));
             save_changes_dialog.add_response("cancel", _("_Cancel"));
             save_changes_dialog.add_response("ok", _("_OK"));
