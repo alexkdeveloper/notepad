@@ -31,6 +31,7 @@ namespace Notepad {
 
         private Adw.ToastOverlay overlay;
 
+        private string last_note_directory_path;
 		private string directory_path;
         private string item = "";
         private string note = "";
@@ -48,16 +49,6 @@ namespace Notepad {
             css_provider.load_from_data((uint8[])".text_size {font-size: 18px}");
             Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             text_view.get_style_context().add_class("text_size");
-			directory_path = Environment.get_user_data_dir()+"/notes_for_notepad_app";
-   GLib.File file = GLib.File.new_for_path(directory_path);
-   if(!file.query_exists()){
-     try{
-        file.make_directory();
-     }catch(Error e){
-        stderr.printf ("Error: %s\n", e.message);
-     }
-		}
-		show_notes();
 	}
     construct{
         list_box = new Gtk.ListBox ();
@@ -150,6 +141,37 @@ namespace Notepad {
         set_content(main_box);
 
         close_request.connect(on_close_application);
+
+        directory_path = Environment.get_user_data_dir()+"/notes_for_notepad_app";
+   GLib.File file = GLib.File.new_for_path(directory_path);
+   if(!file.query_exists()){
+     try{
+        file.make_directory();
+     }catch(Error e){
+        stderr.printf ("Error: %s\n", e.message);
+     }
+		}
+		 last_note_directory_path = Environment.get_user_data_dir()+"/last-note";
+   GLib.File last_note_directory = GLib.File.new_for_path(last_note_directory_path);
+   if(!last_note_directory.query_exists()){
+     try{
+        last_note_directory.make_directory();
+     }catch(Error e){
+        stderr.printf ("Error: %s\n", e.message);
+     }
+   }
+		show_notes();
+
+        GLib.File last_note_name_file = GLib.File.new_for_path(last_note_directory_path+"/name");
+           if(last_note_name_file.query_exists()){
+            string last_note_name;
+               try{
+               FileUtils.get_contents(last_note_name_file.get_path(), out last_note_name);
+               }catch(Error e){
+                  stderr.printf ("Error: %s\n", e.message);
+              }
+             list_box.select_row(list_box.get_row_at_index(get_index(last_note_name)));
+        }
 
         var event_controller = new Gtk.EventControllerKey ();
         event_controller.key_pressed.connect ((keyval, keycode, state) => {
@@ -437,6 +459,11 @@ namespace Notepad {
                 });
             }else{
                 text_view.buffer.text = text;
+            }
+             try{
+               FileUtils.set_contents(last_note_directory_path+"/name", item);
+            }catch(Error e){
+                stderr.printf ("Error: %s\n", e.message);
             }
        }
 

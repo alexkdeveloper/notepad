@@ -26,6 +26,7 @@
           <description>
 	  <ul>
 	    <li>Added a check for saving notes when switching from one note to another, as well as when exiting the application</li>
+	    <li>Added display of the last viewed note at startup</li>
 	  </ul>
           </description>
         </release>
