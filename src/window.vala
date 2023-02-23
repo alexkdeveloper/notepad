@@ -436,8 +436,10 @@ namespace Notepad {
                  FileUtils.set_contents (file.get_path(), edit_text);
               } catch (Error e) {
                      stderr.printf ("Error: %s\n", e.message);
-             }
-                 }
+              }
+                show_notes();
+                list_box.select_row(list_box.get_row_at_index(get_index(item)));
+            }
                 save_changes_dialog.close();
             });
         }
@@ -492,8 +494,22 @@ namespace Notepad {
             list_box.remove(child);
         }
            foreach (string item in list) {
+              string text;
+                try {
+                  FileUtils.get_contents (directory_path+"/"+item, out text);
+               } catch (Error e) {
+                stderr.printf ("Error: %s\n", e.message);
+               }
+               text = text.strip();
+               string sub_item;
+               if(text.length > 15){
+                    sub_item = text.substring(0, 15) + "...";
+                }else{
+                    sub_item = text;
+                }
                 var row = new Adw.ActionRow () {
-                title = item
+                title = item,
+                subtitle = sub_item
             };
             list_box.append(row);
            }
