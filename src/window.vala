@@ -501,9 +501,13 @@ namespace Notepad {
                 stderr.printf ("Error: %s\n", e.message);
                }
                text = text.strip();
-               string sub_item;
-               if(text.length > 15){
-                    sub_item = text.substring(0, 15) + "...";
+               string sub_item = "";
+               if(text.length > 16){
+                  string[] array = new string[16];
+                  for (int i=0;i<16;i++) {
+                       array[i] = text.get_char(text.index_of_nth_char(i)).to_string();
+                       sub_item = sub_item + array[i];
+                  }
                 }else{
                     sub_item = text;
                 }
