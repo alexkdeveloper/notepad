@@ -546,7 +546,7 @@ namespace Notepad {
 	        var win = new Adw.AboutWindow () {
                 application_name = "Notepad",
                 application_icon = "com.github.alexkdeveloper.notepad",
-                version = "1.2.0",
+                version = "1.2.1",
                 copyright = "Copyright © 2022-2023 Alex Kryuchkov",
                 license_type = Gtk.License.GPL_3_0,
                 developer_name = "Alex Kryuchkov",
