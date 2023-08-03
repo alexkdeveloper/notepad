@@ -91,8 +91,8 @@ msgid "_Name:"
 msgstr "_Имя:"
 
 #: window.vala:283
-msgid "_Close"
-msgstr "_Закрыть"
+msgid "Close"
+msgstr "Закрыть"
 
 #: window.vala:293
 msgid "Enter the name"

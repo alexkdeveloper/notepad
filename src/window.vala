@@ -29,6 +29,7 @@ namespace Notepad {
         private Gtk.Entry entry_name;
         private Gtk.SearchEntry entry_search;
 
+        private Adw.Window window_save_note;
         private Adw.ToastOverlay overlay;
 
         private string last_note_directory_path;
@@ -288,30 +289,52 @@ namespace Notepad {
              set_toast(_("Nothing to save"));
              return;
          }
-        var dialog_save_note = new Gtk.Dialog.with_buttons (_("Save note"), this, Gtk.DialogFlags.MODAL);
-		var content_area = dialog_save_note.get_content_area ();
-        content_area.vexpand = true;
-        content_area.valign = Gtk.Align.CENTER;
+        window_save_note = new Adw.Window();
+        window_save_note.set_title (_("Save note"));
+        window_save_note.set_transient_for (this);
         entry_name = new Gtk.Entry();
         var label_name = new Gtk.Label.with_mnemonic (_("_Name:"));
         label_name.set_xalign (0);
         var vbox = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
-        vbox.margin_start = 10;
-        vbox.margin_end = 10;
-        vbox.margin_top = 10;
-        vbox.margin_bottom = 10;
         vbox.append (label_name);
         vbox.append (entry_name);
-		content_area.append (vbox);
-		dialog_save_note.add_button (_("_Close"), Gtk.ResponseType.CLOSE);
-		dialog_save_note.add_button (_("_OK"), Gtk.ResponseType.OK);
-		dialog_save_note.response.connect (on_save_response);
-		dialog_save_note.show ();
+        var ok_button = new Gtk.Button.with_label (_("OK"));
+        ok_button.clicked.connect(on_ok_clicked);
+        var close_button = new Gtk.Button.with_label (_("Close"));
+        close_button.clicked.connect(()=>{
+           window_save_note.close();
+        });
+		var hbox = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
+        hbox.set_halign (Gtk.Align.END);
+        hbox.append (close_button);
+        hbox.append (ok_button);
+
+        var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 10);
+        box.vexpand = true;
+        box.append (vbox);
+        box.append (hbox);
+
+        var clamp = new Adw.Clamp ();
+        clamp.valign = Gtk.Align.CENTER;
+        clamp.tightening_threshold = 100;
+        clamp.margin_top = 10;
+        clamp.margin_bottom = 20;
+        clamp.margin_start = 20;
+        clamp.margin_end = 20;
+        clamp.set_child (box);
+
+        var headerbar = new Adw.HeaderBar();
+        headerbar.add_css_class("flat");
+
+        var main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        main_box.append (headerbar);
+        main_box.append (clamp);
+
+        window_save_note.set_content (main_box);
+        window_save_note.show();
       }
 
-      private void on_save_response (Gtk.Dialog dialog, int response_id) {
-        switch (response_id) {
-		case Gtk.ResponseType.OK:
+      private void on_ok_clicked () {
 		if(is_empty(entry_name.get_text())){
 		    alert(_("Enter the name"),"");
             entry_name.grab_focus();
@@ -344,16 +367,8 @@ namespace Notepad {
             }
             show_notes();
             list_box.select_row(list_box.get_row_at_index(get_index(edit_file.get_basename())));
-        dialog.destroy();
-		break;
-	case Gtk.ResponseType.CLOSE:
-	        dialog.destroy();
-	        break;
-	case Gtk.ResponseType.DELETE_EVENT:
-		dialog.destroy();
-		break;
-		}
-}
+            window_save_note.close();
+      }
 
       private void on_search_clicked(){
           if(entry_search.is_visible()){
@@ -546,7 +561,7 @@ namespace Notepad {
 	        var win = new Adw.AboutWindow () {
                 application_name = "Notepad",
                 application_icon = "com.github.alexkdeveloper.notepad",
-                version = "1.2.1",
+                version = "1.2.2",
                 copyright = "Copyright © 2022-2023 Alex Kryuchkov",
                 license_type = Gtk.License.GPL_3_0,
                 developer_name = "Alex Kryuchkov",

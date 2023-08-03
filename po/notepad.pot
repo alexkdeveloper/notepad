@@ -95,7 +95,7 @@ msgid "_Name:"
 msgstr ""
 
 #: window.vala:306
-msgid "_Close"
+msgid "Close"
 msgstr ""
 
 #: window.vala:316
