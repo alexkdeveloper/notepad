@@ -292,6 +292,7 @@ namespace Notepad {
         window_save_note = new Adw.Window();
         window_save_note.set_title (_("Save note"));
         window_save_note.set_transient_for (this);
+        window_save_note.set_modal (true);
         entry_name = new Gtk.Entry();
         var label_name = new Gtk.Label.with_mnemonic (_("_Name:"));
         label_name.set_xalign (0);
