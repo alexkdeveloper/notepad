@@ -295,7 +295,7 @@ namespace Notepad {
         window_save_note.set_modal (true);
         entry_name = new Gtk.Entry();
         var label_name = new Gtk.Label.with_mnemonic (_("_Name:"));
-        label_name.set_xalign (0);
+        label_name.set_halign (Gtk.Align.START);
         var vbox = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
         vbox.append (label_name);
         vbox.append (entry_name);
