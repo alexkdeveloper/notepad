@@ -38,9 +38,7 @@ namespace Notepad {
         private string note = "";
 
 		public Window (Adw.Application application) {
-			Object (application: application, title: "Notepad",
-            default_height: 400,
-            default_width: 700);
+			Object (application: application, title: "Notepad");
 			add_button.clicked.connect(on_add_clicked);
             delete_button.clicked.connect(on_delete_clicked);
             save_button.clicked.connect(on_save_clicked);
@@ -142,6 +140,13 @@ namespace Notepad {
         set_content(main_box);
 
         close_request.connect(on_close_application);
+
+        var settings = new Settings ("com.github.alexkdeveloper.notepad");
+
+        settings.bind ("width", this, "default-width", SettingsBindFlags.DEFAULT);
+        settings.bind ("height", this, "default-height", SettingsBindFlags.DEFAULT);
+        settings.bind ("is-maximized", this, "maximized", SettingsBindFlags.DEFAULT);
+        settings.bind ("is-fullscreen", this, "fullscreened", SettingsBindFlags.DEFAULT);
 
         directory_path = Environment.get_user_data_dir()+"/notes_for_notepad_app";
    GLib.File file = GLib.File.new_for_path(directory_path);
