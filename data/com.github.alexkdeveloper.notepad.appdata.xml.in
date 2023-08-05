@@ -27,6 +27,7 @@
 	  <ul>
 	    <li>Gtk.Dialog has been replaced by Adw.Window</li>
 	    <li>Added saving of application window sizes</li>
+	    <li>New app icon</li>
 	  </ul>
           </description>
         </release>
