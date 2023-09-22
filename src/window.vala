@@ -45,7 +45,7 @@ namespace Notepad {
             save_as_button.clicked.connect(on_save_as_clicked);
             search_button.clicked.connect(on_search_clicked);
             var css_provider = new Gtk.CssProvider();
-            css_provider.load_from_data((uint8[])".text_size {font-size: 18px}");
+            css_provider.load_from_string(".text_size {font-size: 18px}");
             Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             text_view.get_style_context().add_class("text_size");
 	}
@@ -93,6 +93,7 @@ namespace Notepad {
             menu_button.vexpand = false;
 
         var headerbar = new Adw.HeaderBar();
+        headerbar.add_css_class("flat");
         headerbar.pack_start(add_button);
         headerbar.pack_start(delete_button);
         headerbar.pack_start(search_button);
@@ -567,7 +568,7 @@ namespace Notepad {
 	        var win = new Adw.AboutWindow () {
                 application_name = "Notepad",
                 application_icon = "com.github.alexkdeveloper.notepad",
-                version = "1.2.2",
+                version = "1.2.3",
                 copyright = "Copyright © 2022-2023 Alex Kryuchkov",
                 license_type = Gtk.License.GPL_3_0,
                 developer_name = "Alex Kryuchkov",
