@@ -38,7 +38,7 @@ namespace Notepad {
         private string note = "";
 
 		public Window (Adw.Application application) {
-			Object (application: application, title: "Notepad");
+			Object (application: application, title: "Notepad", height_request: 300, width_request: 450);
 			add_button.clicked.connect(on_add_clicked);
             delete_button.clicked.connect(on_delete_clicked);
             save_button.clicked.connect(on_save_clicked);
@@ -130,6 +130,7 @@ namespace Notepad {
         var hbox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 5);
         hbox.append(scroll);
         hbox.append(scroll_for_text);
+
         var box = new Gtk.Box(Gtk.Orientation.VERTICAL, 5);
         box.append(entry_search);
         box.append(hbox);
@@ -139,6 +140,19 @@ namespace Notepad {
         main_box.append(headerbar);
         main_box.append(overlay);
         set_content(main_box);
+
+        var breakpoint = new Adw.Breakpoint(new Adw.BreakpointCondition.length(Adw.BreakpointConditionLengthType.MAX_WIDTH, 550, Adw.LengthUnit.PX));
+        breakpoint.add_setters(hbox, "orientation", Gtk.Orientation.VERTICAL, hbox, "homogeneous", true);
+
+        breakpoint.apply.connect(()=>{
+            hbox.reorder_child_after(scroll, scroll_for_text);
+        });
+
+        breakpoint.unapply.connect(()=>{
+            hbox.reorder_child_after(scroll_for_text, scroll);
+        });
+
+        add_breakpoint(breakpoint);
 
         close_request.connect(on_close_application);
 
@@ -568,7 +582,7 @@ namespace Notepad {
 	        var win = new Adw.AboutWindow () {
                 application_name = "Notepad",
                 application_icon = "com.github.alexkdeveloper.notepad",
-                version = "1.2.3",
+                version = "1.2.4",
                 copyright = "Copyright © 2022-2023 Alex Kryuchkov",
                 license_type = Gtk.License.GPL_3_0,
                 developer_name = "Alex Kryuchkov",
