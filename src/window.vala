@@ -142,7 +142,7 @@ namespace Notepad {
         set_content(main_box);
 
         var breakpoint = new Adw.Breakpoint(new Adw.BreakpointCondition.length(Adw.BreakpointConditionLengthType.MAX_WIDTH, 550, Adw.LengthUnit.PX));
-        breakpoint.add_setters(hbox, "orientation", Gtk.Orientation.VERTICAL, hbox, "homogeneous", true);
+        breakpoint.add_setters(hbox, "orientation", Gtk.Orientation.VERTICAL, hbox, "homogeneous", true, hbox, "margin-start", 5, hbox, "margin-end", 5);
 
         breakpoint.apply.connect(()=>{
             hbox.reorder_child_after(scroll, scroll_for_text);
