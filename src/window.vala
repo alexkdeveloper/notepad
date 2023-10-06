@@ -141,7 +141,7 @@ namespace Notepad {
         main_box.append(overlay);
         set_content(main_box);
 
-        var breakpoint = new Adw.Breakpoint(new Adw.BreakpointCondition.length(Adw.BreakpointConditionLengthType.MAX_WIDTH, 550, Adw.LengthUnit.PX));
+        var breakpoint = new Adw.Breakpoint(new Adw.BreakpointCondition.length(Adw.BreakpointConditionLengthType.MAX_WIDTH, 550, Adw.LengthUnit.SP));
         breakpoint.add_setters(hbox, "orientation", Gtk.Orientation.VERTICAL, hbox, "homogeneous", true, hbox, "margin-start", 5, hbox, "margin-end", 5);
 
         breakpoint.apply.connect(()=>{
