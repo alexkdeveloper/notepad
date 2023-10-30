@@ -31,6 +31,7 @@ namespace Notepad {
 
         private Adw.Window window_save_note;
         private Adw.ToastOverlay overlay;
+        private Adw.NavigationSplitView split_view;
 
         private string last_note_directory_path;
 		private string directory_path;
@@ -38,14 +39,14 @@ namespace Notepad {
         private string note = "";
 
 		public Window (Adw.Application application) {
-			Object (application: application, title: "Notepad", height_request: 300, width_request: 450);
+			Object (application: application, title: "Notepad", height_request: 300, width_request: 350);
 			add_button.clicked.connect(on_add_clicked);
             delete_button.clicked.connect(on_delete_clicked);
             save_button.clicked.connect(on_save_clicked);
             save_as_button.clicked.connect(on_save_as_clicked);
             search_button.clicked.connect(on_search_clicked);
             var css_provider = new Gtk.CssProvider();
-            css_provider.load_from_string(".text_size {font-size: 18px}");
+            css_provider.load_from_string(".text_size {font-size: 18px;}");
             Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             text_view.get_style_context().add_class("text_size");
 	}
@@ -62,6 +63,8 @@ namespace Notepad {
 
         text_view = new Gtk.TextView();
         text_view.wrap_mode = Gtk.WrapMode.WORD;
+        text_view.margin_start = 5;
+        text_view.margin_end = 5;
         var scroll_for_text = new Gtk.ScrolledWindow ();
         scroll_for_text.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         scroll_for_text.set_vexpand(true);
@@ -92,14 +95,15 @@ namespace Notepad {
             menu_button.set_icon_name ("open-menu-symbolic");
             menu_button.vexpand = false;
 
-        var headerbar = new Adw.HeaderBar();
-        headerbar.add_css_class("flat");
-        headerbar.pack_start(add_button);
-        headerbar.pack_start(delete_button);
-        headerbar.pack_start(search_button);
-        headerbar.pack_end(menu_button);
-        headerbar.pack_end(save_as_button);
-        headerbar.pack_end(save_button);
+        var sidebar_headerbar = new Adw.HeaderBar();
+        sidebar_headerbar.pack_start(add_button);
+        sidebar_headerbar.pack_start(delete_button);
+        sidebar_headerbar.pack_start(search_button);
+
+        var content_headerbar = new Adw.HeaderBar();
+        content_headerbar.pack_end(menu_button);
+        content_headerbar.pack_end(save_as_button);
+        content_headerbar.pack_end(save_button);
 
         var about_action = new GLib.SimpleAction ("about", null);
         about_action.activate.connect (about);
@@ -121,35 +125,43 @@ namespace Notepad {
         entry_search = new Gtk.SearchEntry();
         entry_search.hexpand = true;
         entry_search.changed.connect(show_notes);
-        entry_search.margin_start = 35;
-        entry_search.margin_end = 35;
+        entry_search.margin_start = 15;
+        entry_search.margin_end = 15;
         entry_search.margin_top = 10;
         entry_search.margin_bottom = 5;
         entry_search.hide();
 
-        var hbox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 5);
-        hbox.append(scroll);
-        hbox.append(scroll_for_text);
-
         var box = new Gtk.Box(Gtk.Orientation.VERTICAL, 5);
         box.append(entry_search);
-        box.append(hbox);
-        overlay = new Adw.ToastOverlay();
-        overlay.set_child(box);
-        var main_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
-        main_box.append(headerbar);
-        main_box.append(overlay);
-        set_content(main_box);
+        box.append(scroll);
 
-        var breakpoint = new Adw.Breakpoint(new Adw.BreakpointCondition.length(Adw.BreakpointConditionLengthType.MAX_WIDTH, 550, Adw.LengthUnit.SP));
-        breakpoint.add_setters(hbox, "orientation", Gtk.Orientation.VERTICAL, hbox, "homogeneous", true, hbox, "margin-start", 5, hbox, "margin-end", 5);
+        var sidebar_toolbar = new Adw.ToolbarView();
+        sidebar_toolbar.set_top_bar_style(Adw.ToolbarStyle.RAISED);
+        sidebar_toolbar.add_top_bar(sidebar_headerbar);
+        sidebar_toolbar.set_content(box);
+
+        var content_toolbar = new Adw.ToolbarView();
+        content_toolbar.set_top_bar_style(Adw.ToolbarStyle.RAISED);
+        content_toolbar.add_top_bar(content_headerbar);
+        content_toolbar.set_content(scroll_for_text);
+
+        var sidebar = new Adw.NavigationPage(sidebar_toolbar, "");
+        var content = new Adw.NavigationPage(content_toolbar, "");
+
+        split_view = new Adw.NavigationSplitView();
+        split_view.set_sidebar(sidebar);
+        split_view.set_content(content);
+
+        overlay = new Adw.ToastOverlay();
+        overlay.set_child(split_view);
+
+        set_content(overlay);
+
+        var breakpoint = new Adw.Breakpoint(new Adw.BreakpointCondition.length(Adw.BreakpointConditionLengthType.MAX_WIDTH, 450, Adw.LengthUnit.SP));
+        breakpoint.add_setter(split_view, "collapsed", true);
 
         breakpoint.apply.connect(()=>{
-            hbox.reorder_child_after(scroll, scroll_for_text);
-        });
-
-        breakpoint.unapply.connect(()=>{
-            hbox.reorder_child_after(scroll_for_text, scroll);
+            split_view.set_show_content(false);
         });
 
         add_breakpoint(breakpoint);
@@ -256,6 +268,7 @@ namespace Notepad {
                       }else{
                          show_notes();
                          text_view.buffer.text = "";
+                         split_view.get_content().set_title("");
                       }
                 }
                 delete_note_dialog.close();
@@ -503,6 +516,8 @@ namespace Notepad {
             }catch(Error e){
                 stderr.printf ("Error: %s\n", e.message);
             }
+         split_view.set_show_content(true);
+         split_view.get_content().set_title(item);
        }
 
       private void show_notes () {
@@ -582,7 +597,7 @@ namespace Notepad {
 	        var win = new Adw.AboutWindow () {
                 application_name = "Notepad",
                 application_icon = "com.github.alexkdeveloper.notepad",
-                version = "1.2.4",
+                version = "1.2.5",
                 copyright = "Copyright © 2022-2023 Alex Kryuchkov",
                 license_type = Gtk.License.GPL_3_0,
                 developer_name = "Alex Kryuchkov",
