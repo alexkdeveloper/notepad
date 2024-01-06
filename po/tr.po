@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.alexkdeveloper.notepad\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-14 10:42+0300\n"
-"PO-Revision-Date: 2022-12-14 10:42+0300\n"
+"POT-Creation-Date: 2024-01-06 14:19+0300\n"
+"PO-Revision-Date: 2024-01-06 14:21+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Project-Style: gnome\n"
 
 #: data/com.github.alexkdeveloper.notepad.desktop.in:3
@@ -38,137 +38,114 @@ msgstr "Metin notlarını kolayca oluşturmak için bir program."
 msgid "Alex Kryuchkov"
 msgstr "Alex Kryuchkov"
 
-#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:28
-msgid "A small update of some dialog boxes"
-msgstr ""
-
-#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:35
-msgid "Improved compatibility with GNOME HIG"
-msgstr ""
-
-#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:42
-msgid "Port to AdwMessageDialog"
-msgstr ""
-
-#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:49
-msgid "Update to GNOME Platform version 43"
-msgstr ""
-
-#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:56
-msgid "Port to GTK4 and libadwaita"
-msgstr ""
-
-#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:63
-msgid "Update Italian translation"
-msgstr ""
-
-#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:70
-msgid "Update Czech translation"
-msgstr ""
-
-#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:77
-msgid "Added Russian translation"
-msgstr ""
-
-#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:84
-msgid "Update to GNOME Platform 42"
-msgstr ""
-
-#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:85
-msgid "Added Czech translation"
-msgstr ""
-
-#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:86
-msgid "Added Italian translation"
-msgstr ""
-
-#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:87
-msgid "Added Dutch translation"
-msgstr ""
-
-#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:94
-msgid "Initial release"
-msgstr ""
-
-#: src/window.vala:88
+#: src/window.vala:77
 msgid "Add Note"
 msgstr "Not Ekle"
 
-#: src/window.vala:92
+#: src/window.vala:81
 msgid "Delete Note"
 msgstr "Not Sil"
 
-#: src/window.vala:96
+#: src/window.vala:85
+msgid "Search for Notes"
+msgstr "Notları Ara"
+
+#: src/window.vala:89
 msgid "Save Note"
 msgstr " Notu Kaydet"
 
-#: src/window.vala:100
+#: src/window.vala:93
 msgid "Save Note as…"
 msgstr "Notu Farklı Kaydet…"
 
-#: src/window.vala:133 src/window.vala:163 src/window.vala:200
+#: src/window.vala:118
+msgid "About Notepad"
+msgstr "Not Defteri Hakkında"
+
+#: src/window.vala:119
+msgid "Quit"
+msgstr "Çık"
+
+#: src/window.vala:252 src/window.vala:280 src/window.vala:315
 msgid "Choose a note"
 msgstr "Not seç"
 
-#: src/window.vala:137
+#: src/window.vala:256
 msgid "Delete Note?"
 msgstr "Not Silinsin Mi?"
 
-#: src/window.vala:137
+#: src/window.vala:256
 #, c-format
 msgid "Delete note “%s”?"
 msgstr "“%s” notu silinsin mi?"
 
-#: src/window.vala:138 src/window.vala:175
+#: src/window.vala:257 src/window.vala:292 src/window.vala:433
+#: src/window.vala:476
 msgid "_Cancel"
 msgstr "_İptal Et"
 
-#: src/window.vala:139 src/window.vala:176 src/window.vala:226
-#: src/window.vala:347
+#: src/window.vala:258 src/window.vala:293 src/window.vala:434
+#: src/window.vala:477 src/window.vala:627
 msgid "_OK"
 msgstr "_Tamam"
 
-#: src/window.vala:148
+#: src/window.vala:267
 msgid "Delete failed"
 msgstr "Silinemedi"
 
-#: src/window.vala:170 src/window.vala:207
+#: src/window.vala:287 src/window.vala:322
 msgid "Nothing to save"
 msgstr "Kaydedilecek bir şey yok"
 
-#: src/window.vala:174
+#: src/window.vala:291
 msgid "Save Note?"
 msgstr " Not Kaydedilsin Mi?"
 
-#: src/window.vala:174
+#: src/window.vala:291
 #, c-format
 msgid "Save note “%s”?"
 msgstr "“%s” notu kaydedilsin mi?"
 
-#: src/window.vala:210
+#: src/window.vala:326
 msgid "Save note"
 msgstr "Notu kaydet"
 
-#: src/window.vala:215
+#: src/window.vala:330
 msgid "_Name:"
 msgstr "_Ad:"
 
-#: src/window.vala:225
-msgid "_Close"
-msgstr "_Kapat"
+#: src/window.vala:335
+msgid "OK"
+msgstr "Tamam"
 
-#: src/window.vala:235
+#: src/window.vala:337
+msgid "Close"
+msgstr "Kapat"
+
+#: src/window.vala:373
 msgid "Enter the name"
 msgstr "Adı giriniz"
 
-#: src/window.vala:244
+#: src/window.vala:382
 msgid "Rename failed"
 msgstr "Yeniden adlandırılamadı"
 
-#: src/window.vala:254
+#: src/window.vala:392
 msgid "A note with the same name already exists"
 msgstr "Aynı adla bir not zaten var"
 
-#: src/window.vala:425
+#: src/window.vala:432 src/window.vala:475
+msgid "Changes are not saved"
+msgstr "Değişiklikler kaydedilemedi"
+
+#: src/window.vala:432
+msgid "Save changes to the current note before exiting the program?"
+msgstr "Programdan çıkmadan önce geçerli nottaki değişiklikler kaydedilsin mi?"
+
+#: src/window.vala:475
+msgid "Save the changes in the previous note?"
+msgstr "Önceki nottaki değişiklikleri kaydedilsin mi?"
+
+#: src/window.vala:605
 msgid "translator-credits"
 msgstr "Sabri Ünal <libreajans@gmail.com>"
