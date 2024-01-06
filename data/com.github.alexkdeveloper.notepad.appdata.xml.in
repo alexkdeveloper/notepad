@@ -12,39 +12,43 @@
     <binary>com.github.alexkdeveloper.notepad</binary>
   </provides>
   <developer_name>Alex Kryuchkov</developer_name>
-  <url type="homepage">http://github.com/alexkdeveloper/notepad</url>
-  <url type="bugtracker">http://github.com/alexkdeveloper/notepad/issues</url>
-  <url type="help">http://github.com/alexkdeveloper/notepad/issues</url>
+  <url type="homepage">https://github.com/alexkdeveloper/notepad</url>
+  <url type="bugtracker">https://github.com/alexkdeveloper/notepad/issues</url>
+  <url type="vcs-browser">https://github.com/alexkdeveloper/notepad</url>
+  <url type="translate">https://github.com/alexkdeveloper/notepad/tree/main/po</url>
+  <url type="help">https://github.com/alexkdeveloper/notepad/issues</url>
   <screenshots>
     <screenshot type="default">
     <image>https://raw.githubusercontent.com/alexkdeveloper/notepad/main/data/screenshot.png</image>
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.1"/>
+  <translation type="gettext">notepad</translation>
+  <launchable type="desktop-id">com.github.alexkdeveloper.notepad.desktop</launchable>
   <releases>
     <release version="1.2.5" date="2023-10-31">
-          <description>
+          <description translatable="no">
 	  <ul>
 	    <li>Port to AdwNavigationSplitView</li>
 	  </ul>
           </description>
         </release>
     <release version="1.2.4" date="2023-10-04">
-          <description>
+          <description translatable="no">
 	  <ul>
 	    <li>Added AdwBreakpoint</li>
 	  </ul>
           </description>
         </release>
     <release version="1.2.3" date="2023-09-22">
-          <description>
+          <description translatable="no">
 	  <ul>
 	    <li>Updated to GNOME Platform version 45</li>
 	  </ul>
           </description>
         </release>
     <release version="1.2.2" date="2023-08-03">
-          <description>
+          <description translatable="no">
 	  <ul>
 	    <li>Gtk.Dialog has been replaced by Adw.Window</li>
 	    <li>Added saving of application window sizes</li>
@@ -53,14 +57,14 @@
           </description>
         </release>
      <release version="1.2.1" date="2023-03-22">
-          <description>
+          <description translatable="no">
 	  <ul>
 	    <li>Updated to GNOME Platform version 44</li>
 	  </ul>
           </description>
         </release>
      <release version="1.2.0" date="2023-02-21">
-          <description>
+          <description translatable="no">
 	  <ul>
 	    <li>Added a check for saving notes when switching from one note to another, as well as when exiting the application</li>
 	    <li>Added display of the last viewed note at startup</li>
@@ -69,7 +73,7 @@
           </description>
         </release>
      <release version="1.1.0" date="2023-01-02">
-          <description>
+          <description translatable="no">
 	  <ul>
 	    <li>Improved the operation of the list of notes</li>
 	    <li>Added the function of searching for notes in the list</li>
@@ -79,78 +83,78 @@
           </description>
         </release>
     <release version="1.0.11" date="2022-12-15">
-          <description>
+          <description translatable="no">
 	  <ul>
 	    <li>Updated Dutch translation</li>
 	  </ul>
           </description>
         </release>
     <release version="1.0.10" date="2022-12-14">
-          <description>
+          <description translatable="no">
 	  <ul>
 	    <li>Added Turkish translation</li>
 	  </ul>
           </description>
         </release>
     <release version="1.0.9" date="2022-11-18">
-          <description>
+          <description translatable="no">
 	  <ul>
 	    <li>A small update of some dialog boxes</li>
 	  </ul>
           </description>
         </release>
     <release version="1.0.8" date="2022-10-03">
-          <description>
+          <description translatable="no">
 	  <ul>
 	    <li>Improved compatibility with GNOME HIG</li>
 	  </ul>
           </description>
         </release>
     <release version="1.0.7" date="2022-09-26">
-          <description>
+          <description translatable="no">
 	  <ul>
 	    <li>Port to AdwMessageDialog</li>
 	  </ul>
           </description>
         </release>
     <release version="1.0.6" date="2022-09-24">
-          <description>
+          <description translatable="no">
 	  <ul>
 	    <li>Update to GNOME Platform version 43</li>
 	  </ul>
           </description>
         </release>
     <release version="1.0.5" date="2022-07-20">
-          <description>
-	  <ul> 
+          <description translatable="no">
+	  <ul>
 	    <li>Port to GTK4 and libadwaita</li>
 	  </ul>
           </description>
         </release>
     <release version="1.0.4" date="2022-06-05">
-          <description>
-	  <ul> 
+          <description translatable="no">
+	  <ul>
 	    <li>Update Italian translation</li>
 	  </ul>
           </description>
         </release>
     <release version="1.0.3" date="2022-06-02">
-          <description>
-	  <ul> 
+          <description translatable="no">
+	  <ul>
 	    <li>Update Czech translation</li>
 	  </ul>
           </description>
         </release>
    <release version="1.0.2" date="2022-05-24">
-          <description>
-	  <ul> 
+          <description translatable="no">
+	  <ul>
 	    <li>Added Russian translation</li>
 	  </ul>
           </description>
         </release>
     <release version="1.0.1" date="2022-04-30">
-          <description>
-	  <ul> 
+          <description translatable="no">
+	  <ul>
 	    <li>Update to GNOME Platform 42</li>
             <li>Added Czech translation</li>
             <li>Added Italian translation</li>
@@ -159,8 +163,8 @@
           </description>
         </release>
     <release version="1.0.0" date="2022-02-24">
-          <description>
-	  <ul> 
+          <description translatable="no">
+	  <ul>
             <li>Initial release</li>
 	  </ul>
           </description>

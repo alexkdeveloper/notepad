@@ -1,7 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-02-21 19:11+0800\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-06 14:19+0300\n"
 "PO-Revision-Date: 2023-02-21 19:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -9,116 +10,141 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ../src\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: window.vala:83
+#: data/com.github.alexkdeveloper.notepad.desktop.in:3
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:6
+#, fuzzy
+msgid "Notepad"
+msgstr "О Программе"
+
+#: data/com.github.alexkdeveloper.notepad.desktop.in:4
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:7
+msgid "Easy to create text notes"
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:9
+msgid "Program for easy creation of text notes."
+msgstr ""
+
+#: data/com.github.alexkdeveloper.notepad.appdata.xml.in:14
+msgid "Alex Kryuchkov"
+msgstr ""
+
+#: src/window.vala:77
 msgid "Add Note"
 msgstr "Добавить Заметку"
 
-#: window.vala:87
+#: src/window.vala:81
 msgid "Delete Note"
 msgstr "Удалить Заметку"
 
-#: window.vala:91
+#: src/window.vala:85
 msgid "Search for Notes"
 msgstr "Поиск Заметок"
 
-#: window.vala:95
+#: src/window.vala:89
 msgid "Save Note"
 msgstr "Сохранить Заметку"
 
-#: window.vala:99
+#: src/window.vala:93
 msgid "Save Note as…"
 msgstr "Сохранить Заметку как..."
 
-#: window.vala:122
+#: src/window.vala:118
 msgid "About Notepad"
 msgstr "О Программе"
 
-#: window.vala:123
+#: src/window.vala:119
 msgid "Quit"
 msgstr "Выйти"
 
-#: window.vala:196 window.vala:223 window.vala:258
+#: src/window.vala:252 src/window.vala:280 src/window.vala:315
 msgid "Choose a note"
 msgstr "Выберите заметку"
 
-#: window.vala:200
+#: src/window.vala:256
 msgid "Delete Note?"
 msgstr "Удалить Заметку?"
 
-#: window.vala:200
+#: src/window.vala:256
 #, c-format
 msgid "Delete note “%s”?"
 msgstr "Удалить заметку \"%s\"?"
 
-#: window.vala:201 window.vala:235 window.vala:361 window.vala:404
+#: src/window.vala:257 src/window.vala:292 src/window.vala:433
+#: src/window.vala:476
 msgid "_Cancel"
 msgstr "_Отмена"
 
-#: window.vala:202 window.vala:236 window.vala:284 window.vala:362
-#: window.vala:405 window.vala:528
+#: src/window.vala:258 src/window.vala:293 src/window.vala:434
+#: src/window.vala:477 src/window.vala:627
 msgid "_OK"
 msgstr "_OK"
 
-#: window.vala:211
+#: src/window.vala:267
 msgid "Delete failed"
 msgstr "Не удалось удалить"
 
-#: window.vala:230 window.vala:265
+#: src/window.vala:287 src/window.vala:322
 msgid "Nothing to save"
 msgstr "Нечего сохранять"
 
-#: window.vala:234
+#: src/window.vala:291
 msgid "Save Note?"
 msgstr "Сохранить Заметку?"
 
-#: window.vala:234
+#: src/window.vala:291
 #, c-format
 msgid "Save note “%s”?"
 msgstr "Сохранить заметку \"%s\"?"
 
-#: window.vala:268
+#: src/window.vala:326
 msgid "Save note"
 msgstr "Сохранить заметку"
 
-#: window.vala:273
+#: src/window.vala:330
 msgid "_Name:"
 msgstr "_Имя:"
 
-#: window.vala:283
+#: src/window.vala:335
+#, fuzzy
+msgid "OK"
+msgstr "_OK"
+
+#: src/window.vala:337
 msgid "Close"
 msgstr "Закрыть"
 
-#: window.vala:293
+#: src/window.vala:373
 msgid "Enter the name"
 msgstr "Введите имя"
 
-#: window.vala:302
+#: src/window.vala:382
 msgid "Rename failed"
 msgstr "Не удалось переименовать"
 
-#: window.vala:312
+#: src/window.vala:392
 msgid "A note with the same name already exists"
 msgstr "Заметка с таким именем уже существует"
 
-#: window.vala:360 window.vala:403
+#: src/window.vala:432 src/window.vala:475
 msgid "Changes are not saved"
 msgstr "Изменения не сохранены"
 
-#: window.vala:360
+#: src/window.vala:432
 msgid "Save changes to the current note before exiting the program?"
 msgstr "Сохранить изменения в текущей заметке перед выходом из программы?"
 
-#: window.vala:403
+#: src/window.vala:475
 msgid "Save the changes in the previous note?"
 msgstr "Сохранить изменения в предыдущей заметке?"
 
-#: window.vala:506
+#: src/window.vala:605
 msgid "translator-credits"
 msgstr "Alex Kryuchkov https://github.com/alexkdeveloper"
 
