@@ -1,15 +1,15 @@
 # ITALIAN TRANSLATION FOR NOTEPAD.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the notepad package.
-# ALBANO BATTISTELLA <ALBANO_BATTISTELLA@HOTMAIL.COM>, 2022.
+# ALBANO BATTISTELLA <ALBANO_BATTISTELLA@GMAIL.COM>, 2022,2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: notepad\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 14:19+0300\n"
-"PO-Revision-Date: 2023-01-02 21:11+0100\n"
-"Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
+"PO-Revision-Date: 2024-03-23 11:21+0100\n"
+"Last-Translator: Albano Battistella <albano_battistella@gmail.com>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgstr "Cancella Nota"
 
 #: src/window.vala:85
 msgid "Search for Notes"
-msgstr ""
+msgstr "Cerca note"
 
 #: src/window.vala:89
 msgid "Save Note"
@@ -57,13 +57,12 @@ msgid "Save Note as…"
 msgstr "Salva Nota come…"
 
 #: src/window.vala:118
-#, fuzzy
 msgid "About Notepad"
-msgstr "Notepad"
+msgstr "Informazioni su Notepad"
 
 #: src/window.vala:119
 msgid "Quit"
-msgstr ""
+msgstr "Uscita"
 
 #: src/window.vala:252 src/window.vala:280 src/window.vala:315
 msgid "Choose a note"
@@ -114,14 +113,12 @@ msgid "_Name:"
 msgstr "_Nome:"
 
 #: src/window.vala:335
-#, fuzzy
 msgid "OK"
-msgstr "_OK"
+msgstr "OK"
 
 #: src/window.vala:337
-#, fuzzy
 msgid "Close"
-msgstr "_Chiudi"
+msgstr "Chiudi"
 
 #: src/window.vala:373
 msgid "Enter the name"
@@ -137,19 +134,19 @@ msgstr "Esiste già una nota con lo stesso nome"
 
 #: src/window.vala:432 src/window.vala:475
 msgid "Changes are not saved"
-msgstr ""
+msgstr "Le modifiche non vengono salvate"
 
 #: src/window.vala:432
 msgid "Save changes to the current note before exiting the program?"
-msgstr ""
+msgstr "Salvare le modifiche alla nota corrente prima di uscire dal programma?"
 
 #: src/window.vala:475
 msgid "Save the changes in the previous note?"
-msgstr ""
+msgstr "Vuoi salvare le modifiche nella nota precedente?"
 
 #: src/window.vala:605
 msgid "translator-credits"
-msgstr "Albano Battistella <albano_battistella@hotmail.com>"
+msgstr "Albano Battistella <albanobattistella@gmail.com>"
 
 #~ msgid "A small update of some dialog boxes"
 #~ msgstr "Un piccolo aggiornamento di alcune finestre di dialogo"
