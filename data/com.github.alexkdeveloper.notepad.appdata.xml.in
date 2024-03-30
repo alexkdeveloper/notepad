@@ -12,6 +12,10 @@
     <binary>com.github.alexkdeveloper.notepad</binary>
   </provides>
   <developer_name>Alex Kryuchkov</developer_name>
+  <developer id="io.github.alexkdeveloper">
+    <name translate="no">Alex Kryuchkov</name>
+  </developer>
+
   <url type="homepage">https://github.com/alexkdeveloper/notepad</url>
   <url type="bugtracker">https://github.com/alexkdeveloper/notepad/issues</url>
   <url type="vcs-browser">https://github.com/alexkdeveloper/notepad</url>
