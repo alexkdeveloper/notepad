@@ -30,6 +30,13 @@
   <translation type="gettext">notepad</translation>
   <launchable type="desktop-id">com.github.alexkdeveloper.notepad.desktop</launchable>
   <releases>
+    <release version="1.2.7" date="2024-03-31">
+          <description translate="no">
+	  <ul>
+	    <li>Now, when you delete notes, they are sent to the trash</li>
+	  </ul>
+          </description>
+        </release>
     <release version="1.2.6" date="2024-03-25">
           <description translate="no">
 	  <ul>
