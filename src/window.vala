@@ -262,7 +262,11 @@ namespace Notepad {
             delete_note_dialog.show();
             delete_note_dialog.response.connect((response) => {
                 if (response == "ok") {
-                     FileUtils.remove (directory_path+"/"+item);
+                      try{
+		                 file.trash();
+	                  }catch(Error e){
+		                 print(e.message);
+	                  }
                       if(file.query_exists()){
                          set_toast(_("Delete failed"));
                       }else{
@@ -597,7 +601,7 @@ namespace Notepad {
 	        var win = new Adw.AboutWindow () {
                 application_name = "Notepad",
                 application_icon = "com.github.alexkdeveloper.notepad",
-                version = "1.2.6",
+                version = "1.2.7",
                 copyright = "Copyright © 2022-2024 Alex Kryuchkov",
                 license_type = Gtk.License.GPL_3_0,
                 developer_name = "Alex Kryuchkov",
